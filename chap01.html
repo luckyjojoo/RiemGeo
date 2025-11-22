@@ -270,7 +270,7 @@ window.Quarto = {
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="local-coordinates-and-local-frame-for-real-manifold"><span class="header-section-number">2.1.2</span> Local coordinates and local frame for real manifold</h3>
 <p>Let <span class="math inline">\(\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}\)</span> be an atlas of <span class="math inline">\(M\)</span>. For simplicity, we usually omit the subscript <span class="math inline">\({\alpha}\)</span> when we are working within a single coordinate chart. Therefore, the local coordinate functions are written as <span class="math inline">\((x^1, x^2, \cdots, x^n)\)</span> and the basis for <span class="math inline">\(TM|_{U_{\alpha}}\)</span> are written as: <span class="math display">\[
     \left(\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2},\cdots, \frac{\partial}{\partial x^n} \right)=:(\partial_1, \partial_2, \cdots, \partial_n).
-\]</span> <span class="math inline">\(\{\partial_1, \partial_2, \cdots, \partial_n\}\)</span> are called <strong>coordinate vector fields</strong>, they are defined within the local charts. Since the partial derivatives are interchangeable in <span class="math inline">\(\RR^n\)</span>, we know <span class="math display">\[
+\]</span> <span class="math inline">\(\{\partial_1, \partial_2, \cdots, \partial_n\}\)</span> are called <strong>coordinate vector fields</strong>, they are defined within the local charts. Since the partial derivatives are interchangeable in <span class="math inline">\(\mathbb{R}^n\)</span>, we know <span class="math display">\[
     [\partial_i, \partial_j]=0.
 \]</span> The <strong>coordinate co-vector fields</strong> (differential <span class="math inline">\(1\)</span>-form), are: <span class="math display">\[
     \left(d x^1, d x^2,\cdots, d x^n \right),\quad \text{note that}\ d x^i(\partial_j)=\delta^i_j.
@@ -354,9 +354,9 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be two real vector spaces of dimension <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, respectively. One can define their <strong>tensor product</strong> to be the vector space: <span class="math display">\[
-    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
+    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \mathbb{R}, \phi \ \text{is bi-linear}\},
 \]</span> where <span class="math inline">\(V^*\)</span> denotes the dual space of <span class="math inline">\(V\)</span>. For <span class="math inline">\(\bv\in V, \bw\in W\)</span> and <span class="math inline">\(\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*\)</span>, we define <span class="math display">\[
-    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \RR.
+    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
 \]</span> elements in <span class="math inline">\(V\otimes W\)</span> are called <strong>tensors</strong>. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> (resp. <span class="math inline">\(\{\mathbf{f}_j\}_{1\le j\le m}\)</span>) be a basis of <span class="math inline">\(V\)</span> (resp. <span class="math inline">\(W\)</span>), then <span class="math inline">\(V\otimes W\)</span> has a basis <span class="math display">\[
     \{\mathbf{e}_i\otimes \mathbf{f}_j\}_{1\le i\le n, 1\le j\le m}.
 \]</span> Therefore <span class="math inline">\(\dim(V\otimes W)=nm\)</span>. Let <span class="math inline">\(V\)</span> be a vector space, one can define tensors of type <span class="math inline">\((r, s)\)</span> to be an element in the vector space: <span class="math display">\[
@@ -386,7 +386,7 @@ window.Quarto = {
     \mathbf{T}(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
 \]</span> the right hand side is matrices multiplication.</p>
 <ol start="3" type="1">
-<li>Let <span class="math inline">\(\Phi: V\times V \to \RR\)</span> be a bilinear form, it can be viewed as a <span class="math inline">\((0, 2)\)</span>-tensor. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be as above. We can define <span class="math display">\[
+<li>Let <span class="math inline">\(\Phi: V\times V \to \mathbb{R}\)</span> be a bilinear form, it can be viewed as a <span class="math inline">\((0, 2)\)</span>-tensor. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be as above. We can define <span class="math display">\[
 a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 \]</span> Therefore <span class="math display">\[
 \Phi=a_{\alpha \beta}\mathbf{\omega}^{\alpha} \otimes \mathbf{\omega}^{\beta}.
@@ -408,7 +408,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <p>Let <span class="math inline">\(M\)</span> be a smooth manifold. A tensor field <span class="math inline">\(\mathbf{T}\)</span> of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is a smooth section of the bundle <span class="math display">\[
     \fT(M)^r_s:=\underbrace{TM\otimes \cdots \otimes TM}_{r\ {\text{terms}}}\otimes \underbrace{T^*M\otimes \cdots \otimes T^*M}_{s\ {\text{terms}}}.
 \]</span> It can also be viewed as a <strong>pointwisely</strong> multilinear function: <span class="math display">\[
-    \mathbf{T}: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
+    \mathbf{T}: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \mathbb{R}.
 \]</span></p>
 </div>
 </div>
@@ -455,7 +455,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 \begin{aligned}
     &amp;\Cont^k_l(\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots \otimes \mathbf{\omega}^{i_s})\\
     &amp;=\mathbf{\omega}^{i_l}(\mathbf{e}_{j_k})\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\mathbf{e}}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s}\\
-    &amp;=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s},
+    &amp;=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\mathbf{e}}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s},
 \end{aligned}
 \]</span> where the terms with hats are omitted. It can be checked that <span class="math inline">\(\Cont^k_l\)</span> is independent of the choice of basis.</p>
 </div>
@@ -488,8 +488,8 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n\)</span>-dimensional real vector space. Let <span class="math inline">\(\mathbf{T}\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, i.e.&nbsp;a <span class="math inline">\((1, 1)\)</span> tensor and can be written as <span class="math display">\[
-    \mathbf{T}=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \be^{\alpha}.
-\]</span> We can apply the contraction operator <span class="math inline">\(\Cont\)</span> to <span class="math inline">\(\mathbf{T}\)</span>, since there is only one possible way of contracting the upper and lower indices. Clearly <span class="math inline">\(\Cont(\mathbf{T})\in \cT^0_0=\RR\)</span>, we have <span class="math display">\[
+    \mathbf{T}=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \mathbf{e}^{\alpha}.
+\]</span> We can apply the contraction operator <span class="math inline">\(\Cont\)</span> to <span class="math inline">\(\mathbf{T}\)</span>, since there is only one possible way of contracting the upper and lower indices. Clearly <span class="math inline">\(\Cont(\mathbf{T})\in \cT^0_0=\mathbb{R}\)</span>, we have <span class="math display">\[
     \Tr(\mathbf{T})=\Cont(\mathbf{T})=T^{\alpha}_{\alpha},
 \]</span> remember that we need to sum over the repeated index <span class="math inline">\(\alpha\)</span>. Therefore <span class="math inline">\(\Cont(\mathbf{T})\)</span> is a number. This is simply calculating the <strong>trace</strong> of the square matrix <span class="math inline">\((T^j_i)\)</span> in linear algebra.</p>
 </div>
@@ -558,7 +558,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <li><span class="math inline">\(\alpha\wedge \beta=(-1)^{\deg(\alpha)\deg(\beta)} \beta\wedge\alpha\)</span>;</li>
 <li><span class="math inline">\(\dim \Lambda^k(V)= {n \choose k}\)</span>;</li>
 <li>If <span class="math inline">\(V\)</span> has a basis <span class="math inline">\(\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}\)</span>, then <span class="math inline">\(\Lambda^k(V)\)</span> has a basis of the form <span class="math display">\[
-\{\be^{i_1}\wedge \cdots \wedge \be^{i_k}\ |\ i_1&lt;\cdots&lt;i_k \}
+\{\mathbf{e}^{i_1}\wedge \cdots \wedge \mathbf{e}^{i_k}\ |\ i_1&lt;\cdots&lt;i_k \}
 \]</span></li>
 </ol>
 </div>
@@ -576,7 +576,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <div class="callout-body-container callout-body">
 <p>We define a <span class="math inline">\(k\)</span>-th <strong>differential from</strong> <span class="math inline">\(\omega\)</span> of a smooth manifold <span class="math inline">\(M^n\)</span> to be a smooth section of the exterior bundle <span class="math inline">\(\Lambda^k(T^*M)\)</span>, whose fiber at point <span class="math inline">\(p\in M\)</span> is given by <span class="math display">\[
 \begin{aligned}
-    \Lambda^k(T^*_pM)&amp;:=\{\alpha: T_pM\times \cdots\times T_pM\to \RR\ | \ \alpha\ \text{is skew symmetric}\\
+    \Lambda^k(T^*_pM)&amp;:=\{\alpha: T_pM\times \cdots\times T_pM\to \mathbb{R}\ | \ \alpha\ \text{is skew symmetric}\\
     &amp;\text{ and multi-linear}\}.
 \end{aligned}
 \]</span> <span class="math inline">\(k\)</span> is called the degree of <span class="math inline">\(\alpha\)</span>, denoted by <span class="math inline">\(\deg(\alpha)=k\)</span>. The set of differential <span class="math inline">\(k\)</span>-form on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(\Omega^k(M)\)</span>. For a differential form <span class="math inline">\(\omega\in \Omega^k(M)\)</span>, we define its exterior derivative <span class="math inline">\(d\omega \in \Omega^{k+1}(M)\)</span> by: <span class="math display">\[
@@ -592,12 +592,12 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <section id="bases-components-of-tensors-and-change-of-bases" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="bases-components-of-tensors-and-change-of-bases"><span class="header-section-number">2.4</span> Bases, components of tensors and change of bases</h2>
 <p>In general, it requires more than one coordinate chart to cover a manifold <span class="math inline">\(M\)</span>. Hence, we study how these local descriptions of tensors change when switching between charts. The basic idea is to change the bases (coordinate systems) and observe how the corresponding tensor components transform. Let <span class="math inline">\(M^n\)</span> be a smooth manifold. Suppose <span class="math display">\[
-    (x^1, \cdots, x^n): U\to \RR^n,
+    (x^1, \cdots, x^n): U\to \mathbb{R}^n,
 \]</span> and <span class="math display">\[
-    (x^{1'}, \cdots, x^{n'}): U'\to \RR^n,
+    (x^{1'}, \cdots, x^{n'}): U'\to \mathbb{R}^n,
 \]</span> are two open coordinate charts with <span class="math inline">\(U\cap U' \ne \varnothing\)</span>. Let <span class="math display">\[
     \mathbf{e}_i:=\frac{\partial}{\partial x^i}, \quad \mathbf{e}_{i'}:=\frac{\partial}{\partial x^{i'}}
-\]</span> be two bases of <span class="math inline">\(\Gamma(TM)\)</span> restricted on <span class="math inline">\(U\cap U'\)</span>. Suppose the change of bases matrix <span class="math inline">\((L^i_{\ j}): U\cap U' \to \GL(n, \RR)\)</span> is given by: <span id="eq-BCTCB-CoB"><span class="math display">\[
+\]</span> be two bases of <span class="math inline">\(\Gamma(TM)\)</span> restricted on <span class="math inline">\(U\cap U'\)</span>. Suppose the change of bases matrix <span class="math inline">\((L^i_{\ j}): U\cap U' \to \GL(n, \mathbb{R})\)</span> is given by: <span id="eq-BCTCB-CoB"><span class="math display">\[
     \mathbf{e}_{j'}=\mathbf{e}_{\alpha} L^{\alpha}_{\ j'}.
 \tag{2.4}\]</span></span></p>
 <p>By the chain rule in calculus we have <span class="math display">\[
@@ -625,7 +625,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="how-one-forms-changes"><span class="header-section-number">2.4.2</span> How one forms changes?</h3>
 <p>If <span class="math inline">\(\{\mathbf{\omega}^i\}\)</span> and <span class="math inline">\(\{\mathbf{\omega}^{j'}\}\)</span> denote the dual basis on <span class="math inline">\(U\)</span> and <span class="math inline">\(U'\)</span> respectively. Then under the change of bases <a href="#eq-BCTCB-CoB" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, we have <span class="math display">\[
     \mathbf{\omega}^{i'}=L^{i'}_{\ \beta}\mathbf{\omega}^{\beta}.
-\]</span> The components of the one-form <span class="math inline">\(\bsigma=\sigma_{\alpha}\mathbf{\omega}^{\alpha}=\sigma_{\beta'}\mathbf{\omega}^{\beta'}\)</span> satisfy: <span id="eq-BCTCB-CoCoF"><span class="math display">\[
+\]</span> The components of the one-form <span class="math inline">\(\mathbf{\sigma}=\sigma_{\alpha}\mathbf{\omega}^{\alpha}=\sigma_{\beta'}\mathbf{\omega}^{\beta'}\)</span> satisfy: <span id="eq-BCTCB-CoCoF"><span class="math display">\[
     \sigma_{i'}=\sigma_{\beta}L^{\beta}_{\ i'}
 \tag{2.8}\]</span></span></p>
 </section>
