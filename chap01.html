@@ -257,7 +257,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A topological space <span class="math inline">\(M\)</span> is called a <strong>topological manifold</strong> if there exists an open covering <span class="math inline">\(\{U_{\alpha}\}_{\alpha\in \Lambda}\)</span> and for each <span class="math inline">\(\alpha \in \Lambda\)</span> a homeomorphism <span class="math inline">\(\phi_{\alpha}\)</span> from <span class="math inline">\(U_{\alpha}\)</span> to an open subset in <span class="math inline">\(\RR^n\)</span>. We call the collection <span class="math inline">\(\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}\)</span> an <strong>atlas</strong> on <span class="math inline">\(M\)</span>. An atlas on <span class="math inline">\(M\)</span> is called of class <span class="math inline">\(C^k\)</span> if the <strong>transition map</strong> <span class="math display">\[
+<p>A topological space <span class="math inline">\(M\)</span> is called a <strong>topological manifold</strong> if there exists an open covering <span class="math inline">\(\{U_{\alpha}\}_{\alpha\in \Lambda}\)</span> and for each <span class="math inline">\(\alpha \in \Lambda\)</span> a homeomorphism <span class="math inline">\(\phi_{\alpha}\)</span> from <span class="math inline">\(U_{\alpha}\)</span> to an open subset in <span class="math inline">\(\mathbb{R}^n\)</span>. We call the collection <span class="math inline">\(\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}\)</span> an <strong>atlas</strong> on <span class="math inline">\(M\)</span>. An atlas on <span class="math inline">\(M\)</span> is called of class <span class="math inline">\(C^k\)</span> if the <strong>transition map</strong> <span class="math display">\[
     \phi_{\alpha}\circ\phi_{\beta}^{-1}: \phi_{\beta}(U_{\alpha}\cap U_{\beta})\to \phi_{\alpha}(U_{\alpha}\cap U_{\beta})
 \]</span> are <span class="math inline">\(C^k\)</span> maps whenever <span class="math inline">\(U_{\alpha}\cap U_{\beta}\ne \varnothing\)</span>. A maximal <span class="math inline">\(C^k\)</span> atlas on <span class="math inline">\(M\)</span> is called a <span class="math inline">\(C^k\)</span>-differential structure. <span class="math inline">\(k=\infty\)</span>, we call <span class="math inline">\(M\)</span> a <em>smooth</em> manifold.</p>
 </div>
@@ -280,9 +280,9 @@ window.Quarto = {
 \]</span> is called a local frame on <span class="math inline">\(U\subset M^n\)</span>, if at each point <span class="math inline">\(p\in U\)</span> <span class="math display">\[
     \{\mathbf{e}_1(p), \cdots, \mathbf{e}_n(p)\}
 \]</span> form a basis of <span class="math inline">\(T_pM\)</span>. In general <span class="math inline">\([\mathbf{e}_i, \mathbf{e}_j]\ne 0\)</span>. We denote the set of dual one forms of <span class="math inline">\(\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}\)</span> by <span class="math display">\[
-    \{\bomega^1, \cdots, \bomega^n\}.
+    \{\mathbf{\omega}^1, \cdots, \mathbf{\omega}^n\}.
 \]</span> namely, they satisfy: <span class="math display">\[
-    \bomega^i(\mathbf{e}_j)=\delta^i_j.
+    \mathbf{\omega}^i(\mathbf{e}_j)=\delta^i_j.
 \]</span></p>
 <div id="defn-KroneckerDelta" class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -336,7 +336,7 @@ window.Quarto = {
 <p>the red index <span class="math inline">\(\red{\alpha}\)</span> in <a href="#eq-EinsiteinSum" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is repeated as a superscript and a subscript, therefore we need to sum it from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span>. Is it possible that we only sum from <span class="math inline">\(1\)</span> to another number, say, <span class="math inline">\([n/2]\)</span>? In general, the answer is no. This is because all reasonable quantities defined using local coordinates must be independent of the specific choice of coordinates.</p>
 <p>You may have noticed that we write the <code>coordinate'' or</code>components’’ of <span class="math inline">\(X\)</span> to the right of the basis, this is because of the convention we take in <a href="#eq-BaseLeftCorRight" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>. Namely, we always write the basis vectors in a <strong>row</strong>, the component of <span class="math inline">\(X\)</span> is written as a <strong>column</strong> vector, hence on the right. Consequently, a matrix with row index <span class="math inline">\(i\)</span> and column index <span class="math inline">\(j\)</span> is written as <span class="math inline">\((A^i_j)_{1\le i,j\le n}\)</span>.</p>
 <p>Similarly, for a co-vector field <span class="math inline">\(\mathbf{\alpha}\in \Gamma(T^*M)\)</span>, it can be written as: <span id="eq-EinsiteinSumCo"><span class="math display">\[
-    \mathbf{\alpha}=\alpha_{\red \alpha}\bomega^{\red \alpha}.
+    \mathbf{\alpha}=\alpha_{\red \alpha}\mathbf{\omega}^{\red \alpha}.
 \tag{2.3}\]</span></span></p>
 </section>
 </section>
@@ -357,8 +357,8 @@ window.Quarto = {
     V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
 \]</span> where <span class="math inline">\(V^*\)</span> denotes the dual space of <span class="math inline">\(V\)</span>. For <span class="math inline">\(\bv\in V, \bw\in W\)</span> and <span class="math inline">\(\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*\)</span>, we define <span class="math display">\[
     \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \RR.
-\]</span> elements in <span class="math inline">\(V\otimes W\)</span> are called <strong>tensors</strong>. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> (resp. <span class="math inline">\(\{\bff_j\}_{1\le j\le m}\)</span>) be a basis of <span class="math inline">\(V\)</span> (resp. <span class="math inline">\(W\)</span>), then <span class="math inline">\(V\otimes W\)</span> has a basis <span class="math display">\[
-    \{\mathbf{e}_i\otimes \bff_j\}_{1\le i\le n, 1\le j\le m}.
+\]</span> elements in <span class="math inline">\(V\otimes W\)</span> are called <strong>tensors</strong>. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> (resp. <span class="math inline">\(\{\mathbf{f}_j\}_{1\le j\le m}\)</span>) be a basis of <span class="math inline">\(V\)</span> (resp. <span class="math inline">\(W\)</span>), then <span class="math inline">\(V\otimes W\)</span> has a basis <span class="math display">\[
+    \{\mathbf{e}_i\otimes \mathbf{f}_j\}_{1\le i\le n, 1\le j\le m}.
 \]</span> Therefore <span class="math inline">\(\dim(V\otimes W)=nm\)</span>. Let <span class="math inline">\(V\)</span> be a vector space, one can define tensors of type <span class="math inline">\((r, s)\)</span> to be an element in the vector space: <span class="math display">\[
     \fT^r_s:=\underbrace{V\otimes \cdots \otimes V}_{r\ {\text{terms}}}\otimes \underbrace{V^*\otimes \cdots \otimes V^*}_{s\ {\text{terms}}}.
 \]</span></p>
@@ -376,20 +376,20 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Let <span class="math inline">\(V\)</span> be a vector space, and <span class="math inline">\(v\in V\)</span> be a vector. Clearly <span class="math inline">\(\bv\)</span> can be viewed as a <span class="math inline">\((1, 0)\)</span>-tensor. In fact we can define <span class="math inline">\(\bv(\mathbf{\alpha}):=\mathbf{\alpha}(\bv)\)</span> for any <span class="math inline">\(\mathbf{\alpha}\in V^*\)</span>.</p></li>
-<li><p>Let <span class="math inline">\(\bT: V \to V\)</span> be a linear transformation, then <span class="math inline">\(\bT\)</span> can be viewed as a <span class="math inline">\((1, 1)\)</span> tensor. In fact let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\bomega^j\}_{1\le j\le n}\)</span> be the dual basis of <span class="math inline">\(V^*\)</span>. Let <span class="math inline">\((a_i^j)_{1\le i, j\le n}\)</span> be the coefficients defined by <span class="math display">\[
-\bT(\mathbf{e}_i)=\mathbf{e}_{\alpha} a_i^{\alpha},
+<li><p>Let <span class="math inline">\(\mathbf{T}: V \to V\)</span> be a linear transformation, then <span class="math inline">\(\mathbf{T}\)</span> can be viewed as a <span class="math inline">\((1, 1)\)</span> tensor. In fact let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\mathbf{\omega}^j\}_{1\le j\le n}\)</span> be the dual basis of <span class="math inline">\(V^*\)</span>. Let <span class="math inline">\((a_i^j)_{1\le i, j\le n}\)</span> be the coefficients defined by <span class="math display">\[
+\mathbf{T}(\mathbf{e}_i)=\mathbf{e}_{\alpha} a_i^{\alpha},
 \]</span> for <span class="math inline">\(i=1, \cdots, n\)</span>. Therefore <span class="math display">\[
-\bT=a_i^\alpha \mathbf{e}_{\alpha}\otimes \bomega^i.
+\mathbf{T}=a_i^\alpha \mathbf{e}_{\alpha}\otimes \mathbf{\omega}^i.
 \]</span></p></li>
 </ol>
-<p>To calculate <span class="math inline">\(\bT(v)\)</span> for <span class="math inline">\(\bv=\mathbf{e}_{\alpha}v^{\alpha}\)</span>: <span class="math display">\[
-    \bT(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+<p>To calculate <span class="math inline">\(\mathbf{T}(v)\)</span> for <span class="math inline">\(\bv=\mathbf{e}_{\alpha}v^{\alpha}\)</span>: <span class="math display">\[
+    \mathbf{T}(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
 \]</span> the right hand side is matrices multiplication.</p>
 <ol start="3" type="1">
 <li>Let <span class="math inline">\(\Phi: V\times V \to \RR\)</span> be a bilinear form, it can be viewed as a <span class="math inline">\((0, 2)\)</span>-tensor. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be as above. We can define <span class="math display">\[
 a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 \]</span> Therefore <span class="math display">\[
-\Phi=a_{\alpha \beta}\bomega^{\alpha} \otimes \bomega^{\beta}.
+\Phi=a_{\alpha \beta}\mathbf{\omega}^{\alpha} \otimes \mathbf{\omega}^{\beta}.
 \]</span></li>
 </ol>
 </div>
@@ -405,18 +405,18 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. A tensor field <span class="math inline">\(\bT\)</span> of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is a smooth section of the bundle <span class="math display">\[
+<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. A tensor field <span class="math inline">\(\mathbf{T}\)</span> of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is a smooth section of the bundle <span class="math display">\[
     \fT(M)^r_s:=\underbrace{TM\otimes \cdots \otimes TM}_{r\ {\text{terms}}}\otimes \underbrace{T^*M\otimes \cdots \otimes T^*M}_{s\ {\text{terms}}}.
 \]</span> It can also be viewed as a <strong>pointwisely</strong> multilinear function: <span class="math display">\[
-    \bT: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
+    \mathbf{T}: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
 \]</span></p>
 </div>
 </div>
 <p>Feeding a co-vector field to a vector field <span class="math inline">\(X\)</span> , which is a <span class="math inline">\((1, 0)\)</span>-tensor field, produces a function on <span class="math inline">\(M\)</span>. Similarly, feeding a vector field to a co-vector field <span class="math inline">\(\mathbf{\alpha}\)</span>, which is a <span class="math inline">\((0, 1)\)</span>-tensor field, also produces a function.</p>
-<p>In a local frame, a tensor <span class="math inline">\(\bT\)</span> can be written as <span class="math display">\[
-    \bT=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s},
+<p>In a local frame, a tensor <span class="math inline">\(\mathbf{T}\)</span> can be written as <span class="math display">\[
+    \mathbf{T}=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots \otimes \mathbf{\omega}^{i_s},
 \]</span> where the coefficient is given by: <span class="math display">\[
-    \bT^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\bomega^{j_1},\cdots, \bomega^{j_r}, \mathbf{e}_{i_1}, \cdots, \mathbf{e}_{i_s}).
+    \mathbf{T}^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\mathbf{\omega}^{j_1},\cdots, \mathbf{\omega}^{j_r}, \mathbf{e}_{i_1}, \cdots, \mathbf{e}_{i_s}).
 \]</span></p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -428,7 +428,7 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A tensor can be denoted by either the symbol <span class="math inline">\(\bT\)</span> or its coefficients <span class="math inline">\(T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\)</span>. The first method is concise and readily readily identifies the tensor as “T”, but without revealing its type. The second method is more verbose but offers the benefit of revealing both the name and type <span class="math inline">\((r, s)\)</span> of the tensor.</p>
+<p>A tensor can be denoted by either the symbol <span class="math inline">\(\mathbf{T}\)</span> or its coefficients <span class="math inline">\(T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\)</span>. The first method is concise and readily readily identifies the tensor as “T”, but without revealing its type. The second method is more verbose but offers the benefit of revealing both the name and type <span class="math inline">\((r, s)\)</span> of the tensor.</p>
 <p>However, caution is necessary. A specific coefficient of a tensor itself carries no geometric meaning. Its value depends on the chosen local coordinate chart or frame. Therefore, when encountering a single coefficient like <span class="math inline">\(T^i_j\)</span>​, it typically refers to the entire tensor, not just that specific coefficient.</p>
 </div>
 </div>
@@ -444,18 +444,18 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <div class="callout-body-container callout-body">
 <p>The set of all tensor fields of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(\cT^r_s\)</span> and the set of all tensor fields is denoted by <span class="math display">\[
     \cT:=\bigoplus_{r, s\ge 0}\cT^r_s.
-\]</span> For a <span class="math inline">\((r,s)\)</span> tensor <span class="math inline">\(\bT\)</span> and a <span class="math inline">\((p, q)\)</span> tensor <span class="math inline">\(\bS\)</span>, for <span class="math inline">\(i=1, 2\)</span>, then we define <span class="math inline">\(\bT\otimes \bS\)</span> by <span class="math display">\[
+\]</span> For a <span class="math inline">\((r,s)\)</span> tensor <span class="math inline">\(\mathbf{T}\)</span> and a <span class="math inline">\((p, q)\)</span> tensor <span class="math inline">\(\bS\)</span>, for <span class="math inline">\(i=1, 2\)</span>, then we define <span class="math inline">\(\mathbf{T}\otimes \bS\)</span> by <span class="math display">\[
 \begin{aligned}
-    (\bT\otimes\bS)&amp;(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
-    &amp;=\bT(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
+    (\mathbf{T}\otimes\bS)&amp;(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
+    &amp;=\mathbf{T}(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
 \end{aligned}
 \]</span> For <span class="math inline">\(\alpha_i\in T^*M, X\in TM\)</span>. One can define the <strong>contraction</strong> of the <span class="math inline">\(k\)</span>-th contravariant index and the <span class="math inline">\(l\)</span>-th covariant index: <span class="math display">\[
     \Cont=\Cont^k_l: \cT^r_s\to \cT^{r-1}_{s-1},
 \]</span> by <span class="math display">\[
 \begin{aligned}
-    &amp;\Cont^k_l(\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s})\\
-    &amp;=\bomega^{i_l}(\mathbf{e}_{j_k})\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s}\\
-    &amp;=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s},
+    &amp;\Cont^k_l(\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots \otimes \mathbf{\omega}^{i_s})\\
+    &amp;=\mathbf{\omega}^{i_l}(\mathbf{e}_{j_k})\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\mathbf{e}}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s}\\
+    &amp;=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s},
 \end{aligned}
 \]</span> where the terms with hats are omitted. It can be checked that <span class="math inline">\(\Cont^k_l\)</span> is independent of the choice of basis.</p>
 </div>
@@ -470,9 +470,9 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Prove that for <span class="math inline">\(\bT\in\cT^r_s\)</span>. The coefficients of the contracted tensor <span class="math inline">\(\Cont^k_l(\bT)\in \cT^{r-1}_{s-1}\)</span> are given by:</p>
+<p>Prove that for <span class="math inline">\(\mathbf{T}\in\cT^r_s\)</span>. The coefficients of the contracted tensor <span class="math inline">\(\Cont^k_l(\mathbf{T})\in \cT^{r-1}_{s-1}\)</span> are given by:</p>
 <p><span class="math display">\[
-(\Cont^k_l(\bT))^{i_1, \cdots, i_{r-1}}_{j_1, \cdots, j_{s-1}}=T^{i_1, \cdots, i_{k-1}, \red{m}, i_{k}, \cdots, i_{r-1}}_{j_1, \cdots, j_{l-1}, \red{m}, j_l, \cdots,  j_{s-1}}
+(\Cont^k_l(\mathbf{T}))^{i_1, \cdots, i_{r-1}}_{j_1, \cdots, j_{s-1}}=T^{i_1, \cdots, i_{k-1}, \red{m}, i_{k}, \cdots, i_{r-1}}_{j_1, \cdots, j_{l-1}, \red{m}, j_l, \cdots,  j_{s-1}}
 \]</span></p>
 <p><em>(TikZ diagram omitted for web compatibility)</em></p>
 </div>
@@ -487,11 +487,11 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n\)</span>-dimensional real vector space. Let <span class="math inline">\(\bT\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, i.e.&nbsp;a <span class="math inline">\((1, 1)\)</span> tensor and can be written as <span class="math display">\[
-    \bT=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \be^{\alpha}.
-\]</span> We can apply the contraction operator <span class="math inline">\(\Cont\)</span> to <span class="math inline">\(\bT\)</span>, since there is only one possible way of contracting the upper and lower indices. Clearly <span class="math inline">\(\Cont(\bT)\in \cT^0_0=\RR\)</span>, we have <span class="math display">\[
-    \Tr(\bT)=\Cont(\bT)=T^{\alpha}_{\alpha},
-\]</span> remember that we need to sum over the repeated index <span class="math inline">\(\alpha\)</span>. Therefore <span class="math inline">\(\Cont(\bT)\)</span> is a number. This is simply calculating the <strong>trace</strong> of the square matrix <span class="math inline">\((T^j_i)\)</span> in linear algebra.</p>
+<p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n\)</span>-dimensional real vector space. Let <span class="math inline">\(\mathbf{T}\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, i.e.&nbsp;a <span class="math inline">\((1, 1)\)</span> tensor and can be written as <span class="math display">\[
+    \mathbf{T}=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \be^{\alpha}.
+\]</span> We can apply the contraction operator <span class="math inline">\(\Cont\)</span> to <span class="math inline">\(\mathbf{T}\)</span>, since there is only one possible way of contracting the upper and lower indices. Clearly <span class="math inline">\(\Cont(\mathbf{T})\in \cT^0_0=\RR\)</span>, we have <span class="math display">\[
+    \Tr(\mathbf{T})=\Cont(\mathbf{T})=T^{\alpha}_{\alpha},
+\]</span> remember that we need to sum over the repeated index <span class="math inline">\(\alpha\)</span>. Therefore <span class="math inline">\(\Cont(\mathbf{T})\)</span> is a number. This is simply calculating the <strong>trace</strong> of the square matrix <span class="math inline">\((T^j_i)\)</span> in linear algebra.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
@@ -504,16 +504,16 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\bT\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, then <span class="math inline">\(\bT\)</span> is a <span class="math inline">\((1, 1)\)</span>-tensor. Its dual map <span class="math inline">\(\bT^*: V^*\to V^*\)</span> is also a <span class="math inline">\((1, 1)\)</span> tensor. What’s the difference between these two tensors? Let <span class="math inline">\(\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\bomega^1, \cdots, \bomega^n\}\)</span> be the dual basis. We write <span class="math display">\[
-    \bT=T^{\alpha}_{\beta} \mathbf{e}_{\alpha}\otimes \bomega^{\beta}.
+<p>Let <span class="math inline">\(\mathbf{T}\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, then <span class="math inline">\(\mathbf{T}\)</span> is a <span class="math inline">\((1, 1)\)</span>-tensor. Its dual map <span class="math inline">\(\mathbf{T}^*: V^*\to V^*\)</span> is also a <span class="math inline">\((1, 1)\)</span> tensor. What’s the difference between these two tensors? Let <span class="math inline">\(\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\mathbf{\omega}^1, \cdots, \mathbf{\omega}^n\}\)</span> be the dual basis. We write <span class="math display">\[
+    \mathbf{T}=T^{\alpha}_{\beta} \mathbf{e}_{\alpha}\otimes \mathbf{\omega}^{\beta}.
 \]</span> In linear algebra, if we fix a basis and its dual basis, the matrix representation of the dual map coincides with the transpose of the original map, i.e.&nbsp;<span class="math inline">\((T^*)^i_j=T^j_i\)</span>. We have <span class="math display">\[
-    \bT^*=T^{\beta}_{\alpha} \bomega^{\alpha}\otimes \mathbf{e}_{\beta},
-\]</span> Note that we intensionally swap the order of <span class="math inline">\(\mathbf{e}_{\alpha}\otimes \bomega^{\beta}\)</span> to <span class="math inline">\(\bomega^{\alpha}\otimes \mathbf{e}_{\beta}\)</span>, reflecting the convention: <span class="math display">\[
-    \bT\in \Gamma(TM\otimes T^*M), \ \bT^*\in \Gamma(T^*M\otimes TM).
+    \mathbf{T}^*=T^{\beta}_{\alpha} \mathbf{\omega}^{\alpha}\otimes \mathbf{e}_{\beta},
+\]</span> Note that we intensionally swap the order of <span class="math inline">\(\mathbf{e}_{\alpha}\otimes \mathbf{\omega}^{\beta}\)</span> to <span class="math inline">\(\mathbf{\omega}^{\alpha}\otimes \mathbf{e}_{\beta}\)</span>, reflecting the convention: <span class="math display">\[
+    \mathbf{T}\in \Gamma(TM\otimes T^*M), \ \mathbf{T}^*\in \Gamma(T^*M\otimes TM).
 \]</span> It can be very useful if we arrange the super- and sub-scripts in a linear order from left to right. For example, if <span class="math inline">\(T\in \Gamma(TM\otimes T^*M\otimes TM\otimes TM)\)</span>, then its component will be written as: <span class="math display">\[
     T^{\lightgray{\circ} j\lightgray{\circ}\lightgray{\circ}}_{i\lightgray{\circ}kl}=T^{\ j}_{i\ k l}
 \]</span> Using this new convention, we have <span class="math display">\[
-    \bT=T^{\alpha}_{\ \beta} \mathbf{e}_{\alpha}\otimes \bomega^{\beta}\quad \text{and}\quad \bT^*=T^{\ \beta}_{\alpha} \bomega^{\alpha}\otimes \mathbf{e}_{\beta}
+    \mathbf{T}=T^{\alpha}_{\ \beta} \mathbf{e}_{\alpha}\otimes \mathbf{\omega}^{\beta}\quad \text{and}\quad \mathbf{T}^*=T^{\ \beta}_{\alpha} \mathbf{\omega}^{\alpha}\otimes \mathbf{e}_{\beta}
 \]</span></p>
 </div>
 </div>
@@ -623,9 +623,9 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 </section>
 <section id="how-one-forms-changes" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="how-one-forms-changes"><span class="header-section-number">2.4.2</span> How one forms changes?</h3>
-<p>If <span class="math inline">\(\{\bomega^i\}\)</span> and <span class="math inline">\(\{\bomega^{j'}\}\)</span> denote the dual basis on <span class="math inline">\(U\)</span> and <span class="math inline">\(U'\)</span> respectively. Then under the change of bases <a href="#eq-BCTCB-CoB" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, we have <span class="math display">\[
-    \bomega^{i'}=L^{i'}_{\ \beta}\bomega^{\beta}.
-\]</span> The components of the one-form <span class="math inline">\(\bsigma=\sigma_{\alpha}\bomega^{\alpha}=\sigma_{\beta'}\bomega^{\beta'}\)</span> satisfy: <span id="eq-BCTCB-CoCoF"><span class="math display">\[
+<p>If <span class="math inline">\(\{\mathbf{\omega}^i\}\)</span> and <span class="math inline">\(\{\mathbf{\omega}^{j'}\}\)</span> denote the dual basis on <span class="math inline">\(U\)</span> and <span class="math inline">\(U'\)</span> respectively. Then under the change of bases <a href="#eq-BCTCB-CoB" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, we have <span class="math display">\[
+    \mathbf{\omega}^{i'}=L^{i'}_{\ \beta}\mathbf{\omega}^{\beta}.
+\]</span> The components of the one-form <span class="math inline">\(\bsigma=\sigma_{\alpha}\mathbf{\omega}^{\alpha}=\sigma_{\beta'}\mathbf{\omega}^{\beta'}\)</span> satisfy: <span id="eq-BCTCB-CoCoF"><span class="math display">\[
     \sigma_{i'}=\sigma_{\beta}L^{\beta}_{\ i'}
 \tag{2.8}\]</span></span></p>
 </section>
