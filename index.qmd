@@ -22,7 +22,7 @@ This website hosts the lecture notes for the course on Riemannian Geometry.
 
 ::: {.callout-note appearance="minimal"}
 ## Course Status
-Notes are currently being updated for the current semester.
+This is a test webpage, 这是一个测试网页.
 :::
 
 :::
