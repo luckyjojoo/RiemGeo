@@ -1,0 +1,388 @@
+# Algebraic Part
+
+In the first chapter, basic definitions and notations of differential geometry are introduced. After the introduction of the Riemannian metric tensor, new structures emerge. However, students often find it difficult to understand tensor notations and calculations in local coordinates, which can be a barrier to further study. To overcome this, we start our discussion of tensors in the more familiar context of real vector spaces (which you should already be familiar with), and then extend this to the manifold case. However, this is the only case before we consider derivatives. The notation gets even messier after taking covariant derivatives.
+
+## Real Manifolds
+
+### Definitions
+In this subsection, we will review basic facts of real manifolds, and fix our notations.
+
+::: {.callout-note icon="false"}
+## Definition
+A topological space $M$ is called a **topological manifold** if there exists an open covering $\{U_{\alpha}\}_{\alpha\in \Lambda}$ and for each $\alpha \in \Lambda$ a homeomorphism $\phi_{\alpha}$ from $U_{\alpha}$ to an open subset in $\RR^n$. We call the collection $\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}$ an **atlas** on $M$. An atlas on $M$ is called of class $C^k$ if the **transition map**
+$$
+    \phi_{\alpha}\circ\phi_{\beta}^{-1}: \phi_{\beta}(U_{\alpha}\cap U_{\beta})\to \phi_{\alpha}(U_{\alpha}\cap U_{\beta})
+$$
+are $C^k$ maps whenever $U_{\alpha}\cap U_{\beta}\ne \varnothing$. A maximal $C^k$ atlas on $M$ is called a $C^k$-differential structure. $k=\infty$, we call $M$ a *smooth* manifold.
+:::
+
+Throughout this note, we will only consider smooth manifolds. Given a smooth manifold $M^n$, the *ring* of smooth functions on $M$ is denoted by $C^{\infty}(M)$. We have the tangent bundle $TM$ and cotangent bundle $T^*M$. The space of smooth sections, i.e. vector fields, is denoted by $\Gamma(TM)$. They act on $C^{\infty}(M)$ as derivations. One can check directly that $[X, Y]:=XY-YX$ is also a derivation of $C^{\infty}(M)$. The bracket satisfies the Jacobi identity:
+$$
+    [X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0,
+$$
+for $X, Y, Z\in \Gamma(TM)$, hence $(\Gamma(TM), [,])$ is an infinite dimensional Lie algebra. Similarly, the space of co-vector fields, i.e. one forms, is denoted by $\Gamma(T^*M)$.
+
+### Local coordinates and local frame for real manifold
+Let $\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}$ be an atlas of $M$. For simplicity, we usually omit the subscript ${\alpha}$ when we are working within a single coordinate chart. Therefore, the local coordinate functions are written as $(x^1, x^2, \cdots, x^n)$ and the basis for $TM|_{U_{\alpha}}$ are written as:
+$$
+    \left(\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2},\cdots, \frac{\partial}{\partial x^n} \right)=:(\partial_1, \partial_2, \cdots, \partial_n).
+$$
+$\{\partial_1, \partial_2, \cdots, \partial_n\}$ are called **coordinate vector fields**, they are defined within the local charts. Since the partial derivatives are interchangeable in $\RR^n$, we know
+$$
+    [\partial_i, \partial_j]=0.
+$$
+The **coordinate co-vector fields** (differential $1$-form), are:
+$$
+    \left(d x^1, d x^2,\cdots, d x^n \right),\quad \text{note that}\ d x^i(\partial_j)=\delta^i_j.
+$$
+
+The set of coordinate vector fields is a special case of a **local frame**:
+$$
+    \{\be_1, \cdots, \be_n\},
+$$
+is called a local frame on $U\subset M^n$, if at each point $p\in U$
+$$
+    \{\be_1(p), \cdots, \be_n(p)\}
+$$ 
+form a basis of $T_pM$. In general $[\be_i, \be_j]\ne 0$. We denote the set of dual one forms of $\{\be_1, \cdots, \be_n\}$ by
+$$
+    \{\bomega^1, \cdots, \bomega^n\}.
+$$
+namely, they satisfy:
+$$
+    \bomega^i(\be_j)=\delta^i_j.
+$$
+
+::: {#def-KroneckerDelta .callout-note icon="false"}
+## Definition (Kronecker Delta)
+The Kronecker delta function $\delta^i_j$ is defined by
+$$
+\delta^i_j=
+\begin{cases}
+1&\quad \text{if }\ i=j\\
+0&\quad \text{if }\ i\ne j\\
+\end{cases}
+$$
+:::
+
+### Einstein's notation
+Given a vector field $X\in \Gamma(TM)$, at point $p\in U_{\alpha}$ it can be written as a linear combination of the basis:
+
+$$
+    X(p)=(\be_1(p)\cdots,\be_n(p))\begin{pmatrix}X^1(p)\\ \vdots \\X^n(p)\end{pmatrix}=\sum_{i=1}^n\be_i(p)X^i(p).
+$$ {#eq-BaseLeftCorRight}
+
+Now we introduce Einstein's notation for taking summation. Since tensors tend to have lots of super- and sub-scripts, and many summations over many indices. Keeping track of the summation with the usual ``$\sum$'' notation is time consuming and space consuming. 
+
+::: {.callout-warning icon="false"}
+## Convention
+We will use following Einstein's sum convention through the lectures.
+
+1. When an index appears twice in an expression, once as a superscript and once as a subscript, it signifies summation over the range of that index. This type of index is called **dummy index**, and renaming it is allowed.
+2. A summed index in an expression should appear only twice: once as a subscript and once as a superscript. Seeing it appear three times indicates an error.
+3. In our lectures, the range of summation is typically assumed to be from 1 to the dimension of the manifold, unless otherwise specified by the context.
+4. It takes time to get used to Einstein's notation. But once you know how it works, it becomes as intuitive as breathing.
+:::
+
+We'll omit the point $p$ if it is clear from the context, therefore @eq-BaseLeftCorRight can be written as
+$$
+    X=\be_{\red \alpha}X^{\red \alpha},
+$$ {#eq-EinsiteinSum}
+
+the red index $\red{\alpha}$ in @eq-EinsiteinSum is repeated as a superscript and a subscript, therefore we need to sum it from $1$ to $n$. Is it possible that we only sum from $1$ to another number, say, $[n/2]$? In general, the answer is no. This is because all reasonable quantities defined using local coordinates must be independent of the specific choice of coordinates.
+
+You may have noticed that we write the ``coordinate'' or ``components'' of $X$ to the right of the basis, this is because of the convention we take in @eq-BaseLeftCorRight. Namely, we always write the basis vectors in a **row**, the component of $X$ is written as a **column** vector, hence on the right. Consequently, a matrix with row index $i$ and column index $j$ is written as $(A^i_j)_{1\le i,j\le n}$.
+
+Similarly, for a co-vector field $\balpha\in \Gamma(T^*M)$, it can be written as:
+$$
+    \balpha=\alpha_{\red \alpha}\bomega^{\red \alpha}.
+$$ {#eq-EinsiteinSumCo}
+
+## Tensors and Tensor Fields
+To begin with, we recall the definition of a tensor for a vector space. Subsequently, tensor fields emerge as a natural extension of this concept.
+
+::: {#def-TensorProduct .callout-note icon="false"}
+## Definition
+Let $V$ and $W$ be two real vector spaces of dimension $n$ and $m$, respectively. One can define their **tensor product** to be the vector space:
+$$
+    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
+$$
+where $V^*$ denotes the dual space of $V$. For $\bv\in V, \bw\in W$ and $\balpha\in V^*, \bbeta\in W^*$, we define
+$$
+    \bv\otimes \bw(\balpha, \bbeta)=\bv(\balpha)\bw(\bbeta)\in \RR.
+$$
+elements in $V\otimes W$ are called **tensors**. Let $\{\be_i\}_{1\le i\le n}$ (resp. $\{\bff_j\}_{1\le j\le m}$) be a basis of $V$ (resp. $W$), then $V\otimes W$ has a basis 
+$$
+    \{\be_i\otimes \bff_j\}_{1\le i\le n, 1\le j\le m}.
+$$
+Therefore $\dim(V\otimes W)=nm$. Let $V$ be a vector space, one can define tensors of type $(r, s)$ to be an element in the vector space:
+$$
+    \fT^r_s:=\underbrace{V\otimes \cdots \otimes V}_{r\ {\text{terms}}}\otimes \underbrace{V^*\otimes \cdots \otimes V^*}_{s\ {\text{terms}}}.
+$$
+:::
+
+::: {.callout-tip icon="false"}
+## Example
+1) Let $V$ be a vector space, and $v\in V$ be a vector. Clearly $\bv$ can be viewed as a $(1, 0)$-tensor. In fact we can define $\bv(\balpha):=\balpha(\bv)$ for any $\balpha\in V^*$.
+
+2) Let $\bT: V \to V$ be a linear transformation, then $\bT$ can be viewed as a $(1, 1)$ tensor. In fact let $\{\be_i\}_{1\le i\le n}$ be a basis of $V$ and $\{\bomega^j\}_{1\le j\le n}$ be the dual basis of $V^*$. Let $(a_i^j)_{1\le i, j\le n}$ be the coefficients defined by 
+$$
+    \bT(\be_i)=\be_{\alpha} a_i^{\alpha},
+$$
+for $i=1, \cdots, n$. Therefore
+$$
+    \bT=a_i^\alpha \be_{\alpha}\otimes \bomega^i.
+$$
+
+To calculate $\bT(v)$ for $\bv=\be_{\alpha}v^{\alpha}$:
+$$
+    \bT(\bv)=a_i^{\beta} \delta_{\alpha}^i \be_{\beta} \cdot v^{\alpha} = \be_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+$$
+the right hand side is matrices multiplication.
+
+3) Let $\Phi: V\times V \to \RR$ be a bilinear form, it can be viewed as a $(0, 2)$-tensor. Let $\{\be_i\}_{1\le i\le n}$ be as above. We can define
+$$
+    a_{i j}=\Phi(\be_i, \be_j).
+$$
+Therefore
+$$
+    \Phi=a_{\alpha \beta}\bomega^{\alpha} \otimes \bomega^{\beta}.
+$$
+:::
+
+Now if we replace the single vector space $V$ in the @def-TensorProduct by parametrized vector spaces: $\{T_pM\}_{p\in M}$, namely, we view the manifold $M$ as a parameter space. We have:
+
+::: {#def-TensorField .callout-note icon="false"}
+## Definition
+Let $M$ be a smooth manifold. A tensor field  $\bT$ of type $(r, s)$ on $M$ is a smooth section of the bundle
+$$
+    \fT(M)^r_s:=\underbrace{TM\otimes \cdots \otimes TM}_{r\ {\text{terms}}}\otimes \underbrace{T^*M\otimes \cdots \otimes T^*M}_{s\ {\text{terms}}}.
+$$
+It can also be viewed as a **pointwisely** multilinear function: 
+$$
+    \bT: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
+$$
+:::
+
+Feeding a co-vector field to a vector field $X$ , which is a  $(1, 0)$-tensor field, produces a function on $M$. Similarly, feeding a vector field to a co-vector field $\balpha$, which is a $(0, 1)$-tensor field, also produces a function.
+
+In a local frame, a tensor $\bT$ can be written as
+$$
+    \bT=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s},
+$$
+where the coefficient is given by:
+$$
+    \bT^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\bomega^{j_1},\cdots, \bomega^{j_r}, \be_{i_1}, \cdots, \be_{i_s}).
+$$
+
+::: {.callout-important icon="false"}
+## Remark
+A tensor can be denoted by either the symbol $\bT$ or its coefficients $T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}$. The first method is concise and readily readily identifies the tensor as "T", but without revealing its type. The second method is more verbose but offers the benefit of revealing both the name and type $(r, s)$ of the tensor. 
+
+However, caution is necessary. A specific coefficient of a tensor itself carries no geometric meaning. Its value depends on the chosen local coordinate chart or frame. Therefore, when encountering a single coefficient like $T^i_j$​, it typically refers to the entire tensor, not just that specific coefficient.
+:::
+
+::: {#def-SetofTensors .callout-note icon="false"}
+## Definition
+The set of all tensor fields of type $(r, s)$ on $M$ is denoted by $\cT^r_s$ and the set of all tensor fields is denoted by 
+$$
+    \cT:=\bigoplus_{r, s\ge 0}\cT^r_s.
+$$
+For a $(r,s)$ tensor $\bT$ and a $(p, q)$ tensor $\bS$, for $i=1, 2$, then we define $\bT\otimes \bS$ by
+$$
+\begin{aligned}
+    (\bT\otimes\bS)&(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
+    &=\bT(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
+\end{aligned}
+$$
+For $\alpha_i\in T^*M, X\in TM$.
+One can define the **contraction** of the $k$-th contravariant index and the $l$-th covariant index:
+$$
+    \Cont=\Cont^k_l: \cT^r_s\to \cT^{r-1}_{s-1},
+$$
+by 
+$$
+\begin{aligned}
+    &\Cont^k_l(\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s})\\
+    &=\bomega^{i_l}(\be_{j_k})\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s}\\
+    &=\delta_{j_k}^{i_l}\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s},
+\end{aligned}
+$$
+where the terms with hats are omitted. It can be checked that $\Cont^k_l$ is independent of the choice of basis.
+:::
+
+::: {.callout-note icon="false"}
+## Exercise
+Prove that for $\bT\in\cT^r_s$. The coefficients of the contracted tensor $\Cont^k_l(\bT)\in \cT^{r-1}_{s-1}$ are given by:
+
+$$
+(\Cont^k_l(\bT))^{i_1, \cdots, i_{r-1}}_{j_1, \cdots, j_{s-1}}=T^{i_1, \cdots, i_{k-1}, \red{m}, i_{k}, \cdots, i_{r-1}}_{j_1, \cdots, j_{l-1}, \red{m}, j_l, \cdots,  j_{s-1}}
+$$
+
+*(TikZ diagram omitted for web compatibility)*
+:::
+
+::: {#ex-Trace .callout-tip icon="false"}
+## Example
+Let $V$ be an $n$-dimensional real vector space. Let $\bT$ be a linear map from $V$ to $V$, i.e. a $(1, 1)$ tensor and can be written as
+$$
+    \bT=T^{\beta}_{\alpha}\be_{\beta}\otimes \be^{\alpha}.
+$$
+We can apply the contraction operator $\Cont$ to $\bT$, since there is only one possible way of contracting the upper and lower indices. Clearly $\Cont(\bT)\in \cT^0_0=\RR$, we have
+$$
+    \Tr(\bT)=\Cont(\bT)=T^{\alpha}_{\alpha},
+$$
+remember that we need to sum over the repeated index $\alpha$. Therefore $\Cont(\bT)$ is a number. This is simply calculating the **trace** of the square matrix $(T^j_i)$ in linear algebra.
+:::
+
+::: {.callout-important icon="false"}
+## Remark
+Let $\bT$ be a linear map from $V$ to $V$, then $\bT$ is a $(1, 1)$-tensor. Its dual map $\bT^*: V^*\to V^*$ is also a $(1, 1)$ tensor. What's the difference between these two tensors? Let $\{\be_1, \cdots, \be_n\}$ be a basis of $V$ and  $\{\bomega^1, \cdots, \bomega^n\}$ be the dual basis. We write
+$$
+    \bT=T^{\alpha}_{\beta} \be_{\alpha}\otimes \bomega^{\beta}.
+$$
+In linear algebra, if we fix a basis and its dual basis, the matrix representation of the dual map coincides with the transpose of the original map, i.e. $(T^*)^i_j=T^j_i$. We have
+$$
+    \bT^*=T^{\beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta},
+$$
+Note that we intensionally swap the order of $\be_{\alpha}\otimes \bomega^{\beta}$ to $\bomega^{\alpha}\otimes \be_{\beta}$, reflecting the convention:
+$$
+    \bT\in \Gamma(TM\otimes T^*M), \ \bT^*\in \Gamma(T^*M\otimes TM).
+$$
+It can be very useful if we arrange the super- and sub-scripts in a linear order from left to right. For example, if $T\in \Gamma(TM\otimes T^*M\otimes TM\otimes TM)$, then its component will be written as:
+$$
+    T^{\lightgray{\circ} j\lightgray{\circ}\lightgray{\circ}}_{i\lightgray{\circ}kl}=T^{\ j}_{i\ k l}
+$$
+Using this new convention, we have
+$$
+    \bT=T^{\alpha}_{\ \beta} \be_{\alpha}\otimes \bomega^{\beta}\quad \text{and}\quad \bT^*=T^{\ \beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta}
+$$
+:::
+
+## Exterior Algebra
+In this subsection, we study a special type of tensor: skew-symmetric tensors.
+
+::: {.callout-note icon="false"}
+## Definition
+Let $V$ be a real $n$-dimensional vector space. A $(0, k)$ tensor $\alpha$ is called **symmetric** if
+$$
+    \alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})=\alpha(x_1, \cdots, x_k).
+$$
+It is called **skew symmetric** if
+$$
+    \alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})=\sgn(\sigma)\alpha(x_1, \cdots, x_k).
+$$
+for any $x_1, \cdots, x_k\in V$ and $\sigma$ is a permutation of $\{1, \cdots, k\}$. The set of all skew symmetric $(0, k)$ tensors of $V$ is denoted by $\Omega^k(V)$, its elements are called $k$-exterior forms. 
+
+If $\alpha\in \Omega^k(V), \beta\in \Omega^l(V)$, we define their **wedge product** $\alpha\wedge\beta \in \Omega^{k+l}(V)$ by
+$$
+    \alpha\wedge\beta (x_1, \cdots, x_{k+l})=\frac{1}{k! l !}\sum_{\sigma} \sgn(\sigma)\alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})\beta(x_{\sigma(k+1)}, \cdots, x_{\sigma(k+l)})
+$$
+Therefore for $y_i^*\in V^*$, $i=1, \cdots, k$ and $x_j \in V$, $j=1, \cdots, k$. One can evaluate the $k$-form $(y_1^*\wedge \cdots \wedge y^*_k)$:
+$$
+    (y_1^*\wedge \cdots \wedge y^*_k)(x_1, \cdots, x_k):=\det (y^*_i(x_j)).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+One can check easily that if $\dim V=n$, then
+
+1. $\alpha\wedge \beta=(-1)^{\deg(\alpha)\deg(\beta)} \beta\wedge\alpha$;
+2. $\dim \Lambda^k(V)= {n \choose k}$;
+3. If $V$ has a basis $\{\be_1, \cdots, \be_n\}$, then $\Lambda^k(V)$ has a basis of the form
+$$
+    \{\be^{i_1}\wedge \cdots \wedge \be^{i_k}\ |\ i_1<\cdots<i_k \}
+$$
+:::
+
+Now if we replace $V$ by $T_pM$ as before, we have:
+
+::: {.callout-note icon="false"}
+## Definition
+We define a $k$-th **differential from** $\omega$ of a smooth manifold $M^n$ to be a smooth section of the exterior bundle $\Lambda^k(T^*M)$, whose fiber at point $p\in M$ is given by
+$$
+\begin{aligned}
+    \Lambda^k(T^*_pM)&:=\{\alpha: T_pM\times \cdots\times T_pM\to \RR\ | \ \alpha\ \text{is skew symmetric}\\
+    &\text{ and multi-linear}\}.
+\end{aligned}
+$$
+$k$ is called the degree of $\alpha$, denoted by $\deg(\alpha)=k$. The set of differential $k$-form on $M$ is denoted by $\Omega^k(M)$. For a differential form $\omega\in \Omega^k(M)$, we define its exterior derivative $d\omega \in \Omega^{k+1}(M)$ by:
+$$
+\begin{aligned}
+    d\omega(X_1, &\cdots, X_{k+1})=\sum_{i=1}^{k+1} (-1)^{i+1}X_i (\omega(X_1, \cdots, \hat{X}_i, \cdots, X_{k+1}))\\
+    &+\sum_{i<j}(-1)^{i+j}\omega([X_i, X_j], X_1, \cdots, \hat{X}_i, \cdots, \hat{X}_j, \cdots, X_{k+1}).
+\end{aligned}
+$$
+:::
+
+One can check that $d(\omega\wedge \eta)=d\omega\wedge \eta+(-1)^{\deg \omega} \omega\wedge d\eta$, and $d^2\omega=0$.
+
+## Bases, components of tensors and change of bases
+In general, it requires more than one coordinate chart to cover a manifold $M$. Hence, we study how these local descriptions of tensors change when switching between charts. The basic idea is to change the bases (coordinate systems) and observe how the corresponding tensor components transform. Let $M^n$ be a smooth manifold. Suppose
+$$
+    (x^1, \cdots, x^n): U\to \RR^n,
+$$
+and
+$$
+    (x^{1'}, \cdots, x^{n'}): U'\to \RR^n,
+$$
+are two open coordinate charts with $U\cap U' \ne \varnothing$. Let 
+$$
+    \be_i:=\frac{\partial}{\partial x^i}, \quad \be_{i'}:=\frac{\partial}{\partial x^{i'}}
+$$
+be two bases of $\Gamma(TM)$ restricted on $U\cap U'$. Suppose the change of bases matrix $(L^i_{\ j}): U\cap U' \to \GL(n, \RR)$ is given by:
+$$
+    \be_{j'}=\be_{\alpha} L^{\alpha}_{\ j'}.
+$$ {#eq-BCTCB-CoB}
+
+By the chain rule in calculus we have
+$$
+    \frac{\partial}{\partial x^{j'}}=\frac{\partial x^{\alpha}}{\partial x^{j'}} \frac{\partial}{\partial x^{\alpha}}.
+$$
+Therefore
+$$
+    L^i_{\ j'}=\frac{\partial x^i}{\partial x^{j'}}.
+$$ {#eq-ChangeCoordMatrix}
+
+Denote the inverse matrix of $\{L^i_{\ j'}\}$ by $\{L^{i'}_{\ j}\}$, i.e.
+$$
+    L^i_{\ \beta'}L^{\beta'}_{\ \ j}=\delta^i_{\ j} \quad L^{i'}_{\ \beta}L^{\beta}_{\ \ j'}=\delta^{i'}_{\ j'}
+$$
+By @eq-ChangeCoordMatrix, we have
+$$
+    L^{i'}_{\ j}=\frac{\partial x^{i'}}{\partial x^{j}}.
+$$ {#eq-ChangeCoordMatrix1}
+
+### How vector fields changes?
+Let $X$ be a vector field. On the overlap $U\cap U'$, one can expand it in the first bases:
+$$
+    X=\be_{\alpha}u^{\alpha}.
+$$
+On the other hand we have:
+$$
+    X=\be_{\beta'} u^{\beta'} =(\be_{\alpha} L^{\alpha}_{\ \beta'})u^{\beta'}.
+$$
+It follows that
+$$
+    u^{\alpha}=L^{\alpha}_{\ \beta'}u^{\beta'}\Longleftrightarrow u^{\beta'}=L^{\beta'}_{\ \alpha}u^{\alpha}
+$$ {#eq-BCTCB-CoCoV}
+
+This is well known in linear algebra: the components of a vector must transformed, as in @eq-BCTCB-CoCoV, inversely as the bases transformed in @eq-BCTCB-CoB.
+
+### How one forms changes?
+If $\{\bomega^i\}$ and $\{\bomega^{j'}\}$ denote the dual basis on $U$ and $U'$ respectively. Then under the change of bases @eq-BCTCB-CoB, we have
+$$
+    \bomega^{i'}=L^{i'}_{\ \beta}\bomega^{\beta}.
+$$
+The components of the one-form $\bsigma=\sigma_{\alpha}\bomega^{\alpha}=\sigma_{\beta'}\bomega^{\beta'}$ satisfy:
+$$
+    \sigma_{i'}=\sigma_{\beta}L^{\beta}_{\ i'}
+$$ {#eq-BCTCB-CoCoF}
+
+### General tensors
+For a tensor of type $(r, s)$, its behavior under change of coordinates is a combination of the previous two types. For example:
+$$
+    T^{k'}_{\ i'j'}= T^a_{\ bc}L^{k'}_{\ a}L^b_{\ i'}L^c_{\ j'}.
+$$
+Now you can derive the general formula for the changes of more complicated tensors. Sometimes the formula can be used to check whether an expression with many super- and sub-scripts is a tensor or not.
