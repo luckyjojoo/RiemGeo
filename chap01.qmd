@@ -27,7 +27,7 @@ Let $\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}$ be an atlas of $M$. For 
 $$
     \left(\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2},\cdots, \frac{\partial}{\partial x^n} \right)=:(\partial_1, \partial_2, \cdots, \partial_n).
 $$
-$\{\partial_1, \partial_2, \cdots, \partial_n\}$ are called **coordinate vector fields**, they are defined within the local charts. Since the partial derivatives are interchangeable in $\RR^n$, we know
+$\{\partial_1, \partial_2, \cdots, \partial_n\}$ are called **coordinate vector fields**, they are defined within the local charts. Since the partial derivatives are interchangeable in $\mathbb{R}^n$, we know
 $$
     [\partial_i, \partial_j]=0.
 $$
@@ -105,11 +105,11 @@ To begin with, we recall the definition of a tensor for a vector space. Subseque
 ## Definition
 Let $V$ and $W$ be two real vector spaces of dimension $n$ and $m$, respectively. One can define their **tensor product** to be the vector space:
 $$
-    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
+    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \mathbb{R}, \phi \ \text{is bi-linear}\},
 $$
 where $V^*$ denotes the dual space of $V$. For $\bv\in V, \bw\in W$ and $\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*$, we define
 $$
-    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \RR.
+    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
 $$
 elements in $V\otimes W$ are called **tensors**. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ (resp. $\{\mathbf{f}_j\}_{1\le j\le m}$) be a basis of $V$ (resp. $W$), then $V\otimes W$ has a basis 
 $$
@@ -140,7 +140,7 @@ $$
 $$
 the right hand side is matrices multiplication.
 
-3) Let $\Phi: V\times V \to \RR$ be a bilinear form, it can be viewed as a $(0, 2)$-tensor. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ be as above. We can define
+3) Let $\Phi: V\times V \to \mathbb{R}$ be a bilinear form, it can be viewed as a $(0, 2)$-tensor. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ be as above. We can define
 $$
     a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 $$
@@ -160,7 +160,7 @@ $$
 $$
 It can also be viewed as a **pointwisely** multilinear function: 
 $$
-    \mathbf{T}: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
+    \mathbf{T}: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \mathbb{R}.
 $$
 :::
 
@@ -205,7 +205,7 @@ $$
 \begin{aligned}
     &\Cont^k_l(\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots \otimes \mathbf{\omega}^{i_s})\\
     &=\mathbf{\omega}^{i_l}(\mathbf{e}_{j_k})\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\mathbf{e}}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s}\\
-    &=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s},
+    &=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\mathbf{e}}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \mathbf{\omega}^{i_1}\otimes\cdots\otimes \hat{\mathbf{\omega}}^{i_l} \otimes\cdots\otimes \mathbf{\omega}^{i_s},
 \end{aligned}
 $$
 where the terms with hats are omitted. It can be checked that $\Cont^k_l$ is independent of the choice of basis.
@@ -226,9 +226,9 @@ $$
 ## Example
 Let $V$ be an $n$-dimensional real vector space. Let $\mathbf{T}$ be a linear map from $V$ to $V$, i.e. a $(1, 1)$ tensor and can be written as
 $$
-    \mathbf{T}=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \be^{\alpha}.
+    \mathbf{T}=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \mathbf{e}^{\alpha}.
 $$
-We can apply the contraction operator $\Cont$ to $\mathbf{T}$, since there is only one possible way of contracting the upper and lower indices. Clearly $\Cont(\mathbf{T})\in \cT^0_0=\RR$, we have
+We can apply the contraction operator $\Cont$ to $\mathbf{T}$, since there is only one possible way of contracting the upper and lower indices. Clearly $\Cont(\mathbf{T})\in \cT^0_0=\mathbb{R}$, we have
 $$
     \Tr(\mathbf{T})=\Cont(\mathbf{T})=T^{\alpha}_{\alpha},
 $$
@@ -292,7 +292,7 @@ One can check easily that if $\dim V=n$, then
 2. $\dim \Lambda^k(V)= {n \choose k}$;
 3. If $V$ has a basis $\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}$, then $\Lambda^k(V)$ has a basis of the form
 $$
-    \{\be^{i_1}\wedge \cdots \wedge \be^{i_k}\ |\ i_1<\cdots<i_k \}
+    \{\mathbf{e}^{i_1}\wedge \cdots \wedge \mathbf{e}^{i_k}\ |\ i_1<\cdots<i_k \}
 $$
 :::
 
@@ -303,7 +303,7 @@ Now if we replace $V$ by $T_pM$ as before, we have:
 We define a $k$-th **differential from** $\omega$ of a smooth manifold $M^n$ to be a smooth section of the exterior bundle $\Lambda^k(T^*M)$, whose fiber at point $p\in M$ is given by
 $$
 \begin{aligned}
-    \Lambda^k(T^*_pM)&:=\{\alpha: T_pM\times \cdots\times T_pM\to \RR\ | \ \alpha\ \text{is skew symmetric}\\
+    \Lambda^k(T^*_pM)&:=\{\alpha: T_pM\times \cdots\times T_pM\to \mathbb{R}\ | \ \alpha\ \text{is skew symmetric}\\
     &\text{ and multi-linear}\}.
 \end{aligned}
 $$
@@ -321,17 +321,17 @@ One can check that $d(\omega\wedge \eta)=d\omega\wedge \eta+(-1)^{\deg \omega} \
 ## Bases, components of tensors and change of bases
 In general, it requires more than one coordinate chart to cover a manifold $M$. Hence, we study how these local descriptions of tensors change when switching between charts. The basic idea is to change the bases (coordinate systems) and observe how the corresponding tensor components transform. Let $M^n$ be a smooth manifold. Suppose
 $$
-    (x^1, \cdots, x^n): U\to \RR^n,
+    (x^1, \cdots, x^n): U\to \mathbb{R}^n,
 $$
 and
 $$
-    (x^{1'}, \cdots, x^{n'}): U'\to \RR^n,
+    (x^{1'}, \cdots, x^{n'}): U'\to \mathbb{R}^n,
 $$
 are two open coordinate charts with $U\cap U' \ne \varnothing$. Let 
 $$
     \mathbf{e}_i:=\frac{\partial}{\partial x^i}, \quad \mathbf{e}_{i'}:=\frac{\partial}{\partial x^{i'}}
 $$
-be two bases of $\Gamma(TM)$ restricted on $U\cap U'$. Suppose the change of bases matrix $(L^i_{\ j}): U\cap U' \to \GL(n, \RR)$ is given by:
+be two bases of $\Gamma(TM)$ restricted on $U\cap U'$. Suppose the change of bases matrix $(L^i_{\ j}): U\cap U' \to \GL(n, \mathbb{R})$ is given by:
 $$
     \mathbf{e}_{j'}=\mathbf{e}_{\alpha} L^{\alpha}_{\ j'}.
 $$ {#eq-BCTCB-CoB}
@@ -375,7 +375,7 @@ If $\{\mathbf{\omega}^i\}$ and $\{\mathbf{\omega}^{j'}\}$ denote the dual basis 
 $$
     \mathbf{\omega}^{i'}=L^{i'}_{\ \beta}\mathbf{\omega}^{\beta}.
 $$
-The components of the one-form $\bsigma=\sigma_{\alpha}\mathbf{\omega}^{\alpha}=\sigma_{\beta'}\mathbf{\omega}^{\beta'}$ satisfy:
+The components of the one-form $\mathbf{\sigma}=\sigma_{\alpha}\mathbf{\omega}^{\alpha}=\sigma_{\beta'}\mathbf{\omega}^{\beta'}$ satisfy:
 $$
     \sigma_{i'}=\sigma_{\beta}L^{\beta}_{\ i'}
 $$ {#eq-BCTCB-CoCoF}
