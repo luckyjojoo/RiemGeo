@@ -53,7 +53,7 @@ $$
     \bomega^i(\be_j)=\delta^i_j.
 $$
 
-::: {#def-KroneckerDelta .callout-note icon="false"}
+::: {#defn-KroneckerDelta .callout-note icon="false"}
 ## Definition (Kronecker Delta)
 The Kronecker delta function $\delta^i_j$ is defined by
 $$
@@ -101,7 +101,7 @@ $$ {#eq-EinsiteinSumCo}
 ## Tensors and Tensor Fields
 To begin with, we recall the definition of a tensor for a vector space. Subsequently, tensor fields emerge as a natural extension of this concept.
 
-::: {#def-TensorProduct .callout-note icon="false"}
+::: {#defn-TensorProduct .callout-note icon="false"}
 ## Definition
 Let $V$ and $W$ be two real vector spaces of dimension $n$ and $m$, respectively. One can define their **tensor product** to be the vector space:
 $$
@@ -150,9 +150,9 @@ $$
 $$
 :::
 
-Now if we replace the single vector space $V$ in the @def-TensorProduct by parametrized vector spaces: $\{T_pM\}_{p\in M}$, namely, we view the manifold $M$ as a parameter space. We have:
+Now if we replace the single vector space $V$ in the @defn-TensorProduct by parametrized vector spaces: $\{T_pM\}_{p\in M}$, namely, we view the manifold $M$ as a parameter space. We have:
 
-::: {#def-TensorField .callout-note icon="false"}
+::: {#defn-TensorField .callout-note icon="false"}
 ## Definition
 Let $M$ be a smooth manifold. A tensor field  $\bT$ of type $(r, s)$ on $M$ is a smooth section of the bundle
 $$
@@ -182,7 +182,7 @@ A tensor can be denoted by either the symbol $\bT$ or its coefficients $T^{j_1, 
 However, caution is necessary. A specific coefficient of a tensor itself carries no geometric meaning. Its value depends on the chosen local coordinate chart or frame. Therefore, when encountering a single coefficient like $T^i_j$​, it typically refers to the entire tensor, not just that specific coefficient.
 :::
 
-::: {#def-SetofTensors .callout-note icon="false"}
+::: {#defn-SetofTensors .callout-note icon="false"}
 ## Definition
 The set of all tensor fields of type $(r, s)$ on $M$ is denoted by $\cT^r_s$ and the set of all tensor fields is denoted by 
 $$
