@@ -107,9 +107,9 @@ Let $V$ and $W$ be two real vector spaces of dimension $n$ and $m$, respectively
 $$
     V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \mathbb{R}, \phi \ \text{is bi-linear}\},
 $$
-where $V^*$ denotes the dual space of $V$. For $\bv\in V, \bw\in W$ and $\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*$, we define
+where $V^*$ denotes the dual space of $V$. For $\mathbf{v}\in V, \bw\in W$ and $\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*$, we define
 $$
-    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
+    \mathbf{v}\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\mathbf{v}(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
 $$
 elements in $V\otimes W$ are called **tensors**. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ (resp. $\{\mathbf{f}_j\}_{1\le j\le m}$) be a basis of $V$ (resp. $W$), then $V\otimes W$ has a basis 
 $$
@@ -123,7 +123,7 @@ $$
 
 ::: {.callout-tip icon="false"}
 ## Example
-1) Let $V$ be a vector space, and $v\in V$ be a vector. Clearly $\bv$ can be viewed as a $(1, 0)$-tensor. In fact we can define $\bv(\mathbf{\alpha}):=\mathbf{\alpha}(\bv)$ for any $\mathbf{\alpha}\in V^*$.
+1) Let $V$ be a vector space, and $v\in V$ be a vector. Clearly $\mathbf{v}$ can be viewed as a $(1, 0)$-tensor. In fact we can define $\mathbf{v}(\mathbf{\alpha}):=\mathbf{\alpha}(\mathbf{v})$ for any $\mathbf{\alpha}\in V^*$.
 
 2) Let $\mathbf{T}: V \to V$ be a linear transformation, then $\mathbf{T}$ can be viewed as a $(1, 1)$ tensor. In fact let $\{\mathbf{e}_i\}_{1\le i\le n}$ be a basis of $V$ and $\{\mathbf{\omega}^j\}_{1\le j\le n}$ be the dual basis of $V^*$. Let $(a_i^j)_{1\le i, j\le n}$ be the coefficients defined by 
 $$
@@ -134,9 +134,9 @@ $$
     \mathbf{T}=a_i^\alpha \mathbf{e}_{\alpha}\otimes \mathbf{\omega}^i.
 $$
 
-To calculate $\mathbf{T}(v)$ for $\bv=\mathbf{e}_{\alpha}v^{\alpha}$:
+To calculate $\mathbf{T}(v)$ for $\mathbf{v}=\mathbf{e}_{\alpha}v^{\alpha}$:
 $$
-    \mathbf{T}(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+    \mathbf{T}(\mathbf{v})=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
 $$
 the right hand side is matrices multiplication.
 
@@ -188,11 +188,11 @@ The set of all tensor fields of type $(r, s)$ on $M$ is denoted by $\cT^r_s$ and
 $$
     \cT:=\bigoplus_{r, s\ge 0}\cT^r_s.
 $$
-For a $(r,s)$ tensor $\mathbf{T}$ and a $(p, q)$ tensor $\bS$, for $i=1, 2$, then we define $\mathbf{T}\otimes \bS$ by
+For a $(r,s)$ tensor $\mathbf{T}$ and a $(p, q)$ tensor $\mathbf{S}$, for $i=1, 2$, then we define $\mathbf{T}\otimes \mathbf{S}$ by
 $$
 \begin{aligned}
-    (\mathbf{T}\otimes\bS)&(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
-    &=\mathbf{T}(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
+    (\mathbf{T}\otimes\mathbf{S})&(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
+    &=\mathbf{T}(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\mathbf{S}(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
 \end{aligned}
 $$
 For $\alpha_i\in T^*M, X\in TM$.
