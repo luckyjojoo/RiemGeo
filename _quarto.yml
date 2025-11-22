@@ -1,0 +1,109 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Lectures on Riemannian Geometry"
+  author: "GE Jian"
+  date: last-modified
+  sidebar:
+    style: docked
+    search: true
+    collapse-level: 1
+    background: "#f8f9fa" # Very light grey for low-key look
+    chapters:
+      - index.qmd
+      - part: "Chapters"
+        chapters:
+          # We will add your chapters here later (e.g., chap01.qmd)
+          - text: "Chapter 1 (Coming Soon)" 
+            href: index.qmd # Placeholder until you upload Chap 1
+
+format:
+  html:
+    theme: cosmo
+    mainfont: "Georgia, serif" # Academic feel
+    monofont: "Courier New, monospace"
+    css: styles.css
+    toc: true
+    html-math-method: mathjax
+    include-in-header:
+      - text: |
+          <script>
+          window.MathJax = {
+            tex: {
+              macros: {
+                CC: "\\mathds{C}",
+                NN: "\\mathds{N}",
+                ZZ: "\\mathds{Z}",
+                QQ: "\\mathds{Q}",
+                RR: "\\mathds{R}",
+                Sec: "\\operatorname{Sec}",
+                Oth: "\\operatorname{O}",
+                SOth: "\\operatorname{SO}",
+                Rm: "\\operatorname{Rm}",
+                Ric: "\\operatorname{Ric}",
+                bRic: "\\mathbf{Ric}",
+                Scal: "\\operatorname{Scal}",
+                Vol: "\\operatorname{Vol}",
+                Diam: "\\operatorname{Diam}",
+                Inj: "\\operatorname{inj}",
+                Conj: "\\operatorname{Conj}",
+                grad: "\\operatorname{grad}",
+                Sph: "\\mathbf{S}",
+                Riem: "\\mathbf{Riem}",
+                Tn: "\\mathbf{T}",
+                Lie: "\\mathcal{L}",
+                Cont: "\\mathcal{C}",
+                bRc: "\\boldsymbol{\mathcal{R}}",
+                Diff: "\\text{Diff}",
+                Hess: "\\mathbf{Hess}",
+                Span: "\\operatorname{span}",
+                diver: "\\operatorname{div}",
+                dee: "\\partial",
+                deebar: "\\bar{\\partial}",
+                dist: "\\operatorname{dist}",
+                Exp: "\\operatorname{Exp}",
+                Log: "\\operatorname{Log}",
+                rspan: "\\operatorname{span}",
+                img: "\\operatorname{Im}",
+                seg: "\\operatorname{Seg}",
+                inj: "\\operatorname{Inj}",
+                scg: "\\operatorname{SCG}",
+                id: "\\operatorname{id}",
+                image: "\\operatorname{im}",
+                LT: "\\operatorname{L}",
+                ima: "\\sqrt{-1}",
+                be: "\\bm{e}",
+                bff: "\\bm{f}",
+                bh: "\\bm{h}",
+                bk: "\\bm{k}",
+                bomega: "\\bm{\\omega}",
+                balpha: "\\bm{\\alpha}",
+                bbeta: "\\bm{\\beta}",
+                bsigma: "\\bm{\\sigma}",
+                bmean: "\\bm{m}",
+                bu: "\\bm{u}",
+                bU: "\\bm{U}",
+                bv: "\\bm{v}",
+                bw: "\\bm{w}",
+                bx: "\\bm{x}",
+                by: "\\bm{y}",
+                bs: "\\bm{s}",
+                bR: "\\bm{R}",
+                bA: "\\bm{A}",
+                bJ: "\\bm{J}",
+                bT: "\\bm{T}",
+                bX: "\\bm{X}",
+                bS: "\\bm{S}",
+                bV: "\\bm{V}",
+                bg: "\\bm{g}",
+                bG: "\\bm{G}",
+                LAg: "\\mathfrak{g}",
+                LAh: "\\mathfrak{h}",
+                Ad: "\\mathrm{Ad}",
+                ad: "\\mathrm{ad}"
+              }
+            }
+          };
+          </script>
