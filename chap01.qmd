@@ -38,19 +38,19 @@ $$
 
 The set of coordinate vector fields is a special case of a **local frame**:
 $$
-    \{\be_1, \cdots, \be_n\},
+    \{\mathbf{e}_1, \cdots, \mathbf{e}_n\},
 $$
 is called a local frame on $U\subset M^n$, if at each point $p\in U$
 $$
-    \{\be_1(p), \cdots, \be_n(p)\}
+    \{\mathbf{e}_1(p), \cdots, \mathbf{e}_n(p)\}
 $$ 
-form a basis of $T_pM$. In general $[\be_i, \be_j]\ne 0$. We denote the set of dual one forms of $\{\be_1, \cdots, \be_n\}$ by
+form a basis of $T_pM$. In general $[\mathbf{e}_i, \mathbf{e}_j]\ne 0$. We denote the set of dual one forms of $\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}$ by
 $$
     \{\bomega^1, \cdots, \bomega^n\}.
 $$
 namely, they satisfy:
 $$
-    \bomega^i(\be_j)=\delta^i_j.
+    \bomega^i(\mathbf{e}_j)=\delta^i_j.
 $$
 
 ::: {#defn-KroneckerDelta .callout-note icon="false"}
@@ -69,7 +69,7 @@ $$
 Given a vector field $X\in \Gamma(TM)$, at point $p\in U_{\alpha}$ it can be written as a linear combination of the basis:
 
 $$
-    X(p)=(\be_1(p)\cdots,\be_n(p))\begin{pmatrix}X^1(p)\\ \vdots \\X^n(p)\end{pmatrix}=\sum_{i=1}^n\be_i(p)X^i(p).
+    X(p)=(\mathbf{e}_1(p)\cdots,\mathbf{e}_n(p))\begin{pmatrix}X^1(p)\\ \vdots \\X^n(p)\end{pmatrix}=\sum_{i=1}^n\mathbf{e}_i(p)X^i(p).
 $$ {#eq-BaseLeftCorRight}
 
 Now we introduce Einstein's notation for taking summation. Since tensors tend to have lots of super- and sub-scripts, and many summations over many indices. Keeping track of the summation with the usual ``$\sum$'' notation is time consuming and space consuming. 
@@ -86,16 +86,16 @@ We will use following Einstein's sum convention through the lectures.
 
 We'll omit the point $p$ if it is clear from the context, therefore @eq-BaseLeftCorRight can be written as
 $$
-    X=\be_{\red \alpha}X^{\red \alpha},
+    X=\mathbf{e}_{\red \alpha}X^{\red \alpha},
 $$ {#eq-EinsiteinSum}
 
 the red index $\red{\alpha}$ in @eq-EinsiteinSum is repeated as a superscript and a subscript, therefore we need to sum it from $1$ to $n$. Is it possible that we only sum from $1$ to another number, say, $[n/2]$? In general, the answer is no. This is because all reasonable quantities defined using local coordinates must be independent of the specific choice of coordinates.
 
 You may have noticed that we write the ``coordinate'' or ``components'' of $X$ to the right of the basis, this is because of the convention we take in @eq-BaseLeftCorRight. Namely, we always write the basis vectors in a **row**, the component of $X$ is written as a **column** vector, hence on the right. Consequently, a matrix with row index $i$ and column index $j$ is written as $(A^i_j)_{1\le i,j\le n}$.
 
-Similarly, for a co-vector field $\balpha\in \Gamma(T^*M)$, it can be written as:
+Similarly, for a co-vector field $\mathbf{\alpha}\in \Gamma(T^*M)$, it can be written as:
 $$
-    \balpha=\alpha_{\red \alpha}\bomega^{\red \alpha}.
+    \mathbf{\alpha}=\alpha_{\red \alpha}\bomega^{\red \alpha}.
 $$ {#eq-EinsiteinSumCo}
 
 ## Tensors and Tensor Fields
@@ -107,13 +107,13 @@ Let $V$ and $W$ be two real vector spaces of dimension $n$ and $m$, respectively
 $$
     V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
 $$
-where $V^*$ denotes the dual space of $V$. For $\bv\in V, \bw\in W$ and $\balpha\in V^*, \bbeta\in W^*$, we define
+where $V^*$ denotes the dual space of $V$. For $\bv\in V, \bw\in W$ and $\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*$, we define
 $$
-    \bv\otimes \bw(\balpha, \bbeta)=\bv(\balpha)\bw(\bbeta)\in \RR.
+    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \RR.
 $$
-elements in $V\otimes W$ are called **tensors**. Let $\{\be_i\}_{1\le i\le n}$ (resp. $\{\bff_j\}_{1\le j\le m}$) be a basis of $V$ (resp. $W$), then $V\otimes W$ has a basis 
+elements in $V\otimes W$ are called **tensors**. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ (resp. $\{\bff_j\}_{1\le j\le m}$) be a basis of $V$ (resp. $W$), then $V\otimes W$ has a basis 
 $$
-    \{\be_i\otimes \bff_j\}_{1\le i\le n, 1\le j\le m}.
+    \{\mathbf{e}_i\otimes \bff_j\}_{1\le i\le n, 1\le j\le m}.
 $$
 Therefore $\dim(V\otimes W)=nm$. Let $V$ be a vector space, one can define tensors of type $(r, s)$ to be an element in the vector space:
 $$
@@ -123,26 +123,26 @@ $$
 
 ::: {.callout-tip icon="false"}
 ## Example
-1) Let $V$ be a vector space, and $v\in V$ be a vector. Clearly $\bv$ can be viewed as a $(1, 0)$-tensor. In fact we can define $\bv(\balpha):=\balpha(\bv)$ for any $\balpha\in V^*$.
+1) Let $V$ be a vector space, and $v\in V$ be a vector. Clearly $\bv$ can be viewed as a $(1, 0)$-tensor. In fact we can define $\bv(\mathbf{\alpha}):=\mathbf{\alpha}(\bv)$ for any $\mathbf{\alpha}\in V^*$.
 
-2) Let $\bT: V \to V$ be a linear transformation, then $\bT$ can be viewed as a $(1, 1)$ tensor. In fact let $\{\be_i\}_{1\le i\le n}$ be a basis of $V$ and $\{\bomega^j\}_{1\le j\le n}$ be the dual basis of $V^*$. Let $(a_i^j)_{1\le i, j\le n}$ be the coefficients defined by 
+2) Let $\bT: V \to V$ be a linear transformation, then $\bT$ can be viewed as a $(1, 1)$ tensor. In fact let $\{\mathbf{e}_i\}_{1\le i\le n}$ be a basis of $V$ and $\{\bomega^j\}_{1\le j\le n}$ be the dual basis of $V^*$. Let $(a_i^j)_{1\le i, j\le n}$ be the coefficients defined by 
 $$
-    \bT(\be_i)=\be_{\alpha} a_i^{\alpha},
+    \bT(\mathbf{e}_i)=\mathbf{e}_{\alpha} a_i^{\alpha},
 $$
 for $i=1, \cdots, n$. Therefore
 $$
-    \bT=a_i^\alpha \be_{\alpha}\otimes \bomega^i.
+    \bT=a_i^\alpha \mathbf{e}_{\alpha}\otimes \bomega^i.
 $$
 
-To calculate $\bT(v)$ for $\bv=\be_{\alpha}v^{\alpha}$:
+To calculate $\bT(v)$ for $\bv=\mathbf{e}_{\alpha}v^{\alpha}$:
 $$
-    \bT(\bv)=a_i^{\beta} \delta_{\alpha}^i \be_{\beta} \cdot v^{\alpha} = \be_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+    \bT(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
 $$
 the right hand side is matrices multiplication.
 
-3) Let $\Phi: V\times V \to \RR$ be a bilinear form, it can be viewed as a $(0, 2)$-tensor. Let $\{\be_i\}_{1\le i\le n}$ be as above. We can define
+3) Let $\Phi: V\times V \to \RR$ be a bilinear form, it can be viewed as a $(0, 2)$-tensor. Let $\{\mathbf{e}_i\}_{1\le i\le n}$ be as above. We can define
 $$
-    a_{i j}=\Phi(\be_i, \be_j).
+    a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 $$
 Therefore
 $$
@@ -164,15 +164,15 @@ $$
 $$
 :::
 
-Feeding a co-vector field to a vector field $X$ , which is a  $(1, 0)$-tensor field, produces a function on $M$. Similarly, feeding a vector field to a co-vector field $\balpha$, which is a $(0, 1)$-tensor field, also produces a function.
+Feeding a co-vector field to a vector field $X$ , which is a  $(1, 0)$-tensor field, produces a function on $M$. Similarly, feeding a vector field to a co-vector field $\mathbf{\alpha}$, which is a $(0, 1)$-tensor field, also produces a function.
 
 In a local frame, a tensor $\bT$ can be written as
 $$
-    \bT=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s},
+    \bT=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s},
 $$
 where the coefficient is given by:
 $$
-    \bT^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\bomega^{j_1},\cdots, \bomega^{j_r}, \be_{i_1}, \cdots, \be_{i_s}).
+    \bT^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\bomega^{j_1},\cdots, \bomega^{j_r}, \mathbf{e}_{i_1}, \cdots, \mathbf{e}_{i_s}).
 $$
 
 ::: {.callout-important icon="false"}
@@ -203,9 +203,9 @@ $$
 by 
 $$
 \begin{aligned}
-    &\Cont^k_l(\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s})\\
-    &=\bomega^{i_l}(\be_{j_k})\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s}\\
-    &=\delta_{j_k}^{i_l}\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s},
+    &\Cont^k_l(\mathbf{e}_{j_1}\otimes\cdots \otimes \mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s})\\
+    &=\bomega^{i_l}(\mathbf{e}_{j_k})\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s}\\
+    &=\delta_{j_k}^{i_l}\mathbf{e}_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\mathbf{e}_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s},
 \end{aligned}
 $$
 where the terms with hats are omitted. It can be checked that $\Cont^k_l$ is independent of the choice of basis.
@@ -226,7 +226,7 @@ $$
 ## Example
 Let $V$ be an $n$-dimensional real vector space. Let $\bT$ be a linear map from $V$ to $V$, i.e. a $(1, 1)$ tensor and can be written as
 $$
-    \bT=T^{\beta}_{\alpha}\be_{\beta}\otimes \be^{\alpha}.
+    \bT=T^{\beta}_{\alpha}\mathbf{e}_{\beta}\otimes \be^{\alpha}.
 $$
 We can apply the contraction operator $\Cont$ to $\bT$, since there is only one possible way of contracting the upper and lower indices. Clearly $\Cont(\bT)\in \cT^0_0=\RR$, we have
 $$
@@ -237,15 +237,15 @@ remember that we need to sum over the repeated index $\alpha$. Therefore $\Cont(
 
 ::: {.callout-important icon="false"}
 ## Remark
-Let $\bT$ be a linear map from $V$ to $V$, then $\bT$ is a $(1, 1)$-tensor. Its dual map $\bT^*: V^*\to V^*$ is also a $(1, 1)$ tensor. What's the difference between these two tensors? Let $\{\be_1, \cdots, \be_n\}$ be a basis of $V$ and  $\{\bomega^1, \cdots, \bomega^n\}$ be the dual basis. We write
+Let $\bT$ be a linear map from $V$ to $V$, then $\bT$ is a $(1, 1)$-tensor. Its dual map $\bT^*: V^*\to V^*$ is also a $(1, 1)$ tensor. What's the difference between these two tensors? Let $\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}$ be a basis of $V$ and  $\{\bomega^1, \cdots, \bomega^n\}$ be the dual basis. We write
 $$
-    \bT=T^{\alpha}_{\beta} \be_{\alpha}\otimes \bomega^{\beta}.
+    \bT=T^{\alpha}_{\beta} \mathbf{e}_{\alpha}\otimes \bomega^{\beta}.
 $$
 In linear algebra, if we fix a basis and its dual basis, the matrix representation of the dual map coincides with the transpose of the original map, i.e. $(T^*)^i_j=T^j_i$. We have
 $$
-    \bT^*=T^{\beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta},
+    \bT^*=T^{\beta}_{\alpha} \bomega^{\alpha}\otimes \mathbf{e}_{\beta},
 $$
-Note that we intensionally swap the order of $\be_{\alpha}\otimes \bomega^{\beta}$ to $\bomega^{\alpha}\otimes \be_{\beta}$, reflecting the convention:
+Note that we intensionally swap the order of $\mathbf{e}_{\alpha}\otimes \bomega^{\beta}$ to $\bomega^{\alpha}\otimes \mathbf{e}_{\beta}$, reflecting the convention:
 $$
     \bT\in \Gamma(TM\otimes T^*M), \ \bT^*\in \Gamma(T^*M\otimes TM).
 $$
@@ -255,7 +255,7 @@ $$
 $$
 Using this new convention, we have
 $$
-    \bT=T^{\alpha}_{\ \beta} \be_{\alpha}\otimes \bomega^{\beta}\quad \text{and}\quad \bT^*=T^{\ \beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta}
+    \bT=T^{\alpha}_{\ \beta} \mathbf{e}_{\alpha}\otimes \bomega^{\beta}\quad \text{and}\quad \bT^*=T^{\ \beta}_{\alpha} \bomega^{\alpha}\otimes \mathbf{e}_{\beta}
 $$
 :::
 
@@ -290,7 +290,7 @@ One can check easily that if $\dim V=n$, then
 
 1. $\alpha\wedge \beta=(-1)^{\deg(\alpha)\deg(\beta)} \beta\wedge\alpha$;
 2. $\dim \Lambda^k(V)= {n \choose k}$;
-3. If $V$ has a basis $\{\be_1, \cdots, \be_n\}$, then $\Lambda^k(V)$ has a basis of the form
+3. If $V$ has a basis $\{\mathbf{e}_1, \cdots, \mathbf{e}_n\}$, then $\Lambda^k(V)$ has a basis of the form
 $$
     \{\be^{i_1}\wedge \cdots \wedge \be^{i_k}\ |\ i_1<\cdots<i_k \}
 $$
@@ -329,11 +329,11 @@ $$
 $$
 are two open coordinate charts with $U\cap U' \ne \varnothing$. Let 
 $$
-    \be_i:=\frac{\partial}{\partial x^i}, \quad \be_{i'}:=\frac{\partial}{\partial x^{i'}}
+    \mathbf{e}_i:=\frac{\partial}{\partial x^i}, \quad \mathbf{e}_{i'}:=\frac{\partial}{\partial x^{i'}}
 $$
 be two bases of $\Gamma(TM)$ restricted on $U\cap U'$. Suppose the change of bases matrix $(L^i_{\ j}): U\cap U' \to \GL(n, \RR)$ is given by:
 $$
-    \be_{j'}=\be_{\alpha} L^{\alpha}_{\ j'}.
+    \mathbf{e}_{j'}=\mathbf{e}_{\alpha} L^{\alpha}_{\ j'}.
 $$ {#eq-BCTCB-CoB}
 
 By the chain rule in calculus we have
@@ -357,11 +357,11 @@ $$ {#eq-ChangeCoordMatrix1}
 ### How vector fields changes?
 Let $X$ be a vector field. On the overlap $U\cap U'$, one can expand it in the first bases:
 $$
-    X=\be_{\alpha}u^{\alpha}.
+    X=\mathbf{e}_{\alpha}u^{\alpha}.
 $$
 On the other hand we have:
 $$
-    X=\be_{\beta'} u^{\beta'} =(\be_{\alpha} L^{\alpha}_{\ \beta'})u^{\beta'}.
+    X=\mathbf{e}_{\beta'} u^{\beta'} =(\mathbf{e}_{\alpha} L^{\alpha}_{\ \beta'})u^{\beta'}.
 $$
 It follows that
 $$
