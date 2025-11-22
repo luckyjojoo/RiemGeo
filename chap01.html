@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Algebraic Part – Lectures on Riemannian Geometry</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6a523da0ad456326754793d79d3cc806.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      RR: "\\mathds{R}",
+      CC: "\\mathds{C}",
+      ZZ: "\\mathds{Z}",
+      NN: "\\mathds{N}",
+      be: "\\bm{e}",
+      bff: "\\bm{f}",
+      bomega: "\\bm{\\omega}",
+      balpha: "\\bm{\\alpha}",
+      bbeta: "\\bm{\\beta}",
+      bsigma: "\\bm{\\sigma}",
+      bT: "\\bm{T}",
+      bS: "\\bm{S}",
+      bv: "\\bm{v}",
+      bw: "\\bm{w}",
+      Hom: "\\operatorname{Hom}",
+      Tr: "\\operatorname{Trace}",
+      Cont: "\\mathcal{C}",
+      GL: "\\operatorname{GL}",
+      sgn: "\\operatorname{sgn}",
+      cT: "\\mathfrak{T}",
+      fT: "\\mathrm{T}",
+      red: ["\\color[RGB]{185,87,86}{#1}", 1],
+      blue: ["\\color[RGB]{130,171,163}{#1}", 1],
+      lightgray: ["\\color[gray]{0.8}{#1}", 1]
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap01.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="./chap01.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Algebraic Part</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Lectures on Riemannian Geometry</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Lectures on Riemannian Geometry</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap01.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Algebraic Part</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#real-manifolds" id="toc-real-manifolds" class="nav-link active" data-scroll-target="#real-manifolds"><span class="header-section-number">2.1</span> Real Manifolds</a>
+  <ul class="collapse">
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="header-section-number">2.1.1</span> Definitions</a></li>
+  <li><a href="#local-coordinates-and-local-frame-for-real-manifold" id="toc-local-coordinates-and-local-frame-for-real-manifold" class="nav-link" data-scroll-target="#local-coordinates-and-local-frame-for-real-manifold"><span class="header-section-number">2.1.2</span> Local coordinates and local frame for real manifold</a></li>
+  <li><a href="#einsteins-notation" id="toc-einsteins-notation" class="nav-link" data-scroll-target="#einsteins-notation"><span class="header-section-number">2.1.3</span> Einstein’s notation</a></li>
+  </ul></li>
+  <li><a href="#tensors-and-tensor-fields" id="toc-tensors-and-tensor-fields" class="nav-link" data-scroll-target="#tensors-and-tensor-fields"><span class="header-section-number">2.2</span> Tensors and Tensor Fields</a></li>
+  <li><a href="#exterior-algebra" id="toc-exterior-algebra" class="nav-link" data-scroll-target="#exterior-algebra"><span class="header-section-number">2.3</span> Exterior Algebra</a></li>
+  <li><a href="#bases-components-of-tensors-and-change-of-bases" id="toc-bases-components-of-tensors-and-change-of-bases" class="nav-link" data-scroll-target="#bases-components-of-tensors-and-change-of-bases"><span class="header-section-number">2.4</span> Bases, components of tensors and change of bases</a>
+  <ul class="collapse">
+  <li><a href="#how-vector-fields-changes" id="toc-how-vector-fields-changes" class="nav-link" data-scroll-target="#how-vector-fields-changes"><span class="header-section-number">2.4.1</span> How vector fields changes?</a></li>
+  <li><a href="#how-one-forms-changes" id="toc-how-one-forms-changes" class="nav-link" data-scroll-target="#how-one-forms-changes"><span class="header-section-number">2.4.2</span> How one forms changes?</a></li>
+  <li><a href="#general-tensors" id="toc-general-tensors" class="nav-link" data-scroll-target="#general-tensors"><span class="header-section-number">2.4.3</span> General tensors</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap01.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="./chap01.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Algebraic Part</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Algebraic Part</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In the first chapter, basic definitions and notations of differential geometry are introduced. After the introduction of the Riemannian metric tensor, new structures emerge. However, students often find it difficult to understand tensor notations and calculations in local coordinates, which can be a barrier to further study. To overcome this, we start our discussion of tensors in the more familiar context of real vector spaces (which you should already be familiar with), and then extend this to the manifold case. However, this is the only case before we consider derivatives. The notation gets even messier after taking covariant derivatives.</p>
+<section id="real-manifolds" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="real-manifolds"><span class="header-section-number">2.1</span> Real Manifolds</h2>
+<section id="definitions" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">2.1.1</span> Definitions</h3>
+<p>In this subsection, we will review basic facts of real manifolds, and fix our notations.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A topological space <span class="math inline">\(M\)</span> is called a <strong>topological manifold</strong> if there exists an open covering <span class="math inline">\(\{U_{\alpha}\}_{\alpha\in \Lambda}\)</span> and for each <span class="math inline">\(\alpha \in \Lambda\)</span> a homeomorphism <span class="math inline">\(\phi_{\alpha}\)</span> from <span class="math inline">\(U_{\alpha}\)</span> to an open subset in <span class="math inline">\(\RR^n\)</span>. We call the collection <span class="math inline">\(\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}\)</span> an <strong>atlas</strong> on <span class="math inline">\(M\)</span>. An atlas on <span class="math inline">\(M\)</span> is called of class <span class="math inline">\(C^k\)</span> if the <strong>transition map</strong> <span class="math display">\[
+    \phi_{\alpha}\circ\phi_{\beta}^{-1}: \phi_{\beta}(U_{\alpha}\cap U_{\beta})\to \phi_{\alpha}(U_{\alpha}\cap U_{\beta})
+\]</span> are <span class="math inline">\(C^k\)</span> maps whenever <span class="math inline">\(U_{\alpha}\cap U_{\beta}\ne \varnothing\)</span>. A maximal <span class="math inline">\(C^k\)</span> atlas on <span class="math inline">\(M\)</span> is called a <span class="math inline">\(C^k\)</span>-differential structure. <span class="math inline">\(k=\infty\)</span>, we call <span class="math inline">\(M\)</span> a <em>smooth</em> manifold.</p>
+</div>
+</div>
+<p>Throughout this note, we will only consider smooth manifolds. Given a smooth manifold <span class="math inline">\(M^n\)</span>, the <em>ring</em> of smooth functions on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(C^{\infty}(M)\)</span>. We have the tangent bundle <span class="math inline">\(TM\)</span> and cotangent bundle <span class="math inline">\(T^*M\)</span>. The space of smooth sections, i.e.&nbsp;vector fields, is denoted by <span class="math inline">\(\Gamma(TM)\)</span>. They act on <span class="math inline">\(C^{\infty}(M)\)</span> as derivations. One can check directly that <span class="math inline">\([X, Y]:=XY-YX\)</span> is also a derivation of <span class="math inline">\(C^{\infty}(M)\)</span>. The bracket satisfies the Jacobi identity: <span class="math display">\[
+    [X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0,
+\]</span> for <span class="math inline">\(X, Y, Z\in \Gamma(TM)\)</span>, hence <span class="math inline">\((\Gamma(TM), [,])\)</span> is an infinite dimensional Lie algebra. Similarly, the space of co-vector fields, i.e.&nbsp;one forms, is denoted by <span class="math inline">\(\Gamma(T^*M)\)</span>.</p>
+</section>
+<section id="local-coordinates-and-local-frame-for-real-manifold" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="local-coordinates-and-local-frame-for-real-manifold"><span class="header-section-number">2.1.2</span> Local coordinates and local frame for real manifold</h3>
+<p>Let <span class="math inline">\(\{U_{\alpha}, \phi_{\alpha}\}_{\alpha\in \Lambda}\)</span> be an atlas of <span class="math inline">\(M\)</span>. For simplicity, we usually omit the subscript <span class="math inline">\({\alpha}\)</span> when we are working within a single coordinate chart. Therefore, the local coordinate functions are written as <span class="math inline">\((x^1, x^2, \cdots, x^n)\)</span> and the basis for <span class="math inline">\(TM|_{U_{\alpha}}\)</span> are written as: <span class="math display">\[
+    \left(\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2},\cdots, \frac{\partial}{\partial x^n} \right)=:(\partial_1, \partial_2, \cdots, \partial_n).
+\]</span> <span class="math inline">\(\{\partial_1, \partial_2, \cdots, \partial_n\}\)</span> are called <strong>coordinate vector fields</strong>, they are defined within the local charts. Since the partial derivatives are interchangeable in <span class="math inline">\(\RR^n\)</span>, we know <span class="math display">\[
+    [\partial_i, \partial_j]=0.
+\]</span> The <strong>coordinate co-vector fields</strong> (differential <span class="math inline">\(1\)</span>-form), are: <span class="math display">\[
+    \left(d x^1, d x^2,\cdots, d x^n \right),\quad \text{note that}\ d x^i(\partial_j)=\delta^i_j.
+\]</span></p>
+<p>The set of coordinate vector fields is a special case of a <strong>local frame</strong>: <span class="math display">\[
+    \{\be_1, \cdots, \be_n\},
+\]</span> is called a local frame on <span class="math inline">\(U\subset M^n\)</span>, if at each point <span class="math inline">\(p\in U\)</span> <span class="math display">\[
+    \{\be_1(p), \cdots, \be_n(p)\}
+\]</span> form a basis of <span class="math inline">\(T_pM\)</span>. In general <span class="math inline">\([\be_i, \be_j]\ne 0\)</span>. We denote the set of dual one forms of <span class="math inline">\(\{\be_1, \cdots, \be_n\}\)</span> by <span class="math display">\[
+    \{\bomega^1, \cdots, \bomega^n\}.
+\]</span> namely, they satisfy: <span class="math display">\[
+    \bomega^i(\be_j)=\delta^i_j.
+\]</span></p>
+<div id="defn-KroneckerDelta" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition (Kronecker Delta)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Kronecker delta function <span class="math inline">\(\delta^i_j\)</span> is defined by <span class="math display">\[
+\delta^i_j=
+\begin{cases}
+1&amp;\quad \text{if }\ i=j\\
+0&amp;\quad \text{if }\ i\ne j\\
+\end{cases}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="einsteins-notation" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="einsteins-notation"><span class="header-section-number">2.1.3</span> Einstein’s notation</h3>
+<p>Given a vector field <span class="math inline">\(X\in \Gamma(TM)\)</span>, at point <span class="math inline">\(p\in U_{\alpha}\)</span> it can be written as a linear combination of the basis:</p>
+<p><span id="eq-BaseLeftCorRight"><span class="math display">\[
+    X(p)=(\be_1(p)\cdots,\be_n(p))\begin{pmatrix}X^1(p)\\ \vdots \\X^n(p)\end{pmatrix}=\sum_{i=1}^n\be_i(p)X^i(p).
+\tag{2.1}\]</span></span></p>
+<p>Now we introduce Einstein’s notation for taking summation. Since tensors tend to have lots of super- and sub-scripts, and many summations over many indices. Keeping track of the summation with the usual ``<span class="math inline">\(\sum\)</span>’’ notation is time consuming and space consuming.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Convention
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will use following Einstein’s sum convention through the lectures.</p>
+<ol type="1">
+<li>When an index appears twice in an expression, once as a superscript and once as a subscript, it signifies summation over the range of that index. This type of index is called <strong>dummy index</strong>, and renaming it is allowed.</li>
+<li>A summed index in an expression should appear only twice: once as a subscript and once as a superscript. Seeing it appear three times indicates an error.</li>
+<li>In our lectures, the range of summation is typically assumed to be from 1 to the dimension of the manifold, unless otherwise specified by the context.</li>
+<li>It takes time to get used to Einstein’s notation. But once you know how it works, it becomes as intuitive as breathing.</li>
+</ol>
+</div>
+</div>
+<p>We’ll omit the point <span class="math inline">\(p\)</span> if it is clear from the context, therefore <a href="#eq-BaseLeftCorRight" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> can be written as <span id="eq-EinsiteinSum"><span class="math display">\[
+    X=\be_{\red \alpha}X^{\red \alpha},
+\tag{2.2}\]</span></span></p>
+<p>the red index <span class="math inline">\(\red{\alpha}\)</span> in <a href="#eq-EinsiteinSum" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is repeated as a superscript and a subscript, therefore we need to sum it from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span>. Is it possible that we only sum from <span class="math inline">\(1\)</span> to another number, say, <span class="math inline">\([n/2]\)</span>? In general, the answer is no. This is because all reasonable quantities defined using local coordinates must be independent of the specific choice of coordinates.</p>
+<p>You may have noticed that we write the <code>coordinate'' or</code>components’’ of <span class="math inline">\(X\)</span> to the right of the basis, this is because of the convention we take in <a href="#eq-BaseLeftCorRight" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>. Namely, we always write the basis vectors in a <strong>row</strong>, the component of <span class="math inline">\(X\)</span> is written as a <strong>column</strong> vector, hence on the right. Consequently, a matrix with row index <span class="math inline">\(i\)</span> and column index <span class="math inline">\(j\)</span> is written as <span class="math inline">\((A^i_j)_{1\le i,j\le n}\)</span>.</p>
+<p>Similarly, for a co-vector field <span class="math inline">\(\balpha\in \Gamma(T^*M)\)</span>, it can be written as: <span id="eq-EinsiteinSumCo"><span class="math display">\[
+    \balpha=\alpha_{\red \alpha}\bomega^{\red \alpha}.
+\tag{2.3}\]</span></span></p>
+</section>
+</section>
+<section id="tensors-and-tensor-fields" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="tensors-and-tensor-fields"><span class="header-section-number">2.2</span> Tensors and Tensor Fields</h2>
+<p>To begin with, we recall the definition of a tensor for a vector space. Subsequently, tensor fields emerge as a natural extension of this concept.</p>
+<div id="defn-TensorProduct" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be two real vector spaces of dimension <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, respectively. One can define their <strong>tensor product</strong> to be the vector space: <span class="math display">\[
+    V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \RR, \phi \ \text{is bi-linear}\},
+\]</span> where <span class="math inline">\(V^*\)</span> denotes the dual space of <span class="math inline">\(V\)</span>. For <span class="math inline">\(\bv\in V, \bw\in W\)</span> and <span class="math inline">\(\balpha\in V^*, \bbeta\in W^*\)</span>, we define <span class="math display">\[
+    \bv\otimes \bw(\balpha, \bbeta)=\bv(\balpha)\bw(\bbeta)\in \RR.
+\]</span> elements in <span class="math inline">\(V\otimes W\)</span> are called <strong>tensors</strong>. Let <span class="math inline">\(\{\be_i\}_{1\le i\le n}\)</span> (resp. <span class="math inline">\(\{\bff_j\}_{1\le j\le m}\)</span>) be a basis of <span class="math inline">\(V\)</span> (resp. <span class="math inline">\(W\)</span>), then <span class="math inline">\(V\otimes W\)</span> has a basis <span class="math display">\[
+    \{\be_i\otimes \bff_j\}_{1\le i\le n, 1\le j\le m}.
+\]</span> Therefore <span class="math inline">\(\dim(V\otimes W)=nm\)</span>. Let <span class="math inline">\(V\)</span> be a vector space, one can define tensors of type <span class="math inline">\((r, s)\)</span> to be an element in the vector space: <span class="math display">\[
+    \fT^r_s:=\underbrace{V\otimes \cdots \otimes V}_{r\ {\text{terms}}}\otimes \underbrace{V^*\otimes \cdots \otimes V^*}_{s\ {\text{terms}}}.
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Let <span class="math inline">\(V\)</span> be a vector space, and <span class="math inline">\(v\in V\)</span> be a vector. Clearly <span class="math inline">\(\bv\)</span> can be viewed as a <span class="math inline">\((1, 0)\)</span>-tensor. In fact we can define <span class="math inline">\(\bv(\balpha):=\balpha(\bv)\)</span> for any <span class="math inline">\(\balpha\in V^*\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(\bT: V \to V\)</span> be a linear transformation, then <span class="math inline">\(\bT\)</span> can be viewed as a <span class="math inline">\((1, 1)\)</span> tensor. In fact let <span class="math inline">\(\{\be_i\}_{1\le i\le n}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\bomega^j\}_{1\le j\le n}\)</span> be the dual basis of <span class="math inline">\(V^*\)</span>. Let <span class="math inline">\((a_i^j)_{1\le i, j\le n}\)</span> be the coefficients defined by <span class="math display">\[
+\bT(\be_i)=\be_{\alpha} a_i^{\alpha},
+\]</span> for <span class="math inline">\(i=1, \cdots, n\)</span>. Therefore <span class="math display">\[
+\bT=a_i^\alpha \be_{\alpha}\otimes \bomega^i.
+\]</span></p></li>
+</ol>
+<p>To calculate <span class="math inline">\(\bT(v)\)</span> for <span class="math inline">\(\bv=\be_{\alpha}v^{\alpha}\)</span>: <span class="math display">\[
+    \bT(\bv)=a_i^{\beta} \delta_{\alpha}^i \be_{\beta} \cdot v^{\alpha} = \be_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+\]</span> the right hand side is matrices multiplication.</p>
+<ol start="3" type="1">
+<li>Let <span class="math inline">\(\Phi: V\times V \to \RR\)</span> be a bilinear form, it can be viewed as a <span class="math inline">\((0, 2)\)</span>-tensor. Let <span class="math inline">\(\{\be_i\}_{1\le i\le n}\)</span> be as above. We can define <span class="math display">\[
+a_{i j}=\Phi(\be_i, \be_j).
+\]</span> Therefore <span class="math display">\[
+\Phi=a_{\alpha \beta}\bomega^{\alpha} \otimes \bomega^{\beta}.
+\]</span></li>
+</ol>
+</div>
+</div>
+<p>Now if we replace the single vector space <span class="math inline">\(V\)</span> in the <span class="citation" data-cites="defn-TensorProduct">@defn-TensorProduct</span> by parametrized vector spaces: <span class="math inline">\(\{T_pM\}_{p\in M}\)</span>, namely, we view the manifold <span class="math inline">\(M\)</span> as a parameter space. We have:</p>
+<div id="defn-TensorField" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. A tensor field <span class="math inline">\(\bT\)</span> of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is a smooth section of the bundle <span class="math display">\[
+    \fT(M)^r_s:=\underbrace{TM\otimes \cdots \otimes TM}_{r\ {\text{terms}}}\otimes \underbrace{T^*M\otimes \cdots \otimes T^*M}_{s\ {\text{terms}}}.
+\]</span> It can also be viewed as a <strong>pointwisely</strong> multilinear function: <span class="math display">\[
+    \bT: \underbrace{T^*M\times \cdots \times T^*M}_{r\ {\text{terms}}}\times \underbrace{TM\times \cdots \times TM}_{s\ {\text{terms}}} \to \RR.
+\]</span></p>
+</div>
+</div>
+<p>Feeding a co-vector field to a vector field <span class="math inline">\(X\)</span> , which is a <span class="math inline">\((1, 0)\)</span>-tensor field, produces a function on <span class="math inline">\(M\)</span>. Similarly, feeding a vector field to a co-vector field <span class="math inline">\(\balpha\)</span>, which is a <span class="math inline">\((0, 1)\)</span>-tensor field, also produces a function.</p>
+<p>In a local frame, a tensor <span class="math inline">\(\bT\)</span> can be written as <span class="math display">\[
+    \bT=T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s},
+\]</span> where the coefficient is given by: <span class="math display">\[
+    \bT^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}:=T(\bomega^{j_1},\cdots, \bomega^{j_r}, \be_{i_1}, \cdots, \be_{i_s}).
+\]</span></p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Remark
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A tensor can be denoted by either the symbol <span class="math inline">\(\bT\)</span> or its coefficients <span class="math inline">\(T^{j_1, \cdots, j_r}_{i_1, \cdots, i_s}\)</span>. The first method is concise and readily readily identifies the tensor as “T”, but without revealing its type. The second method is more verbose but offers the benefit of revealing both the name and type <span class="math inline">\((r, s)\)</span> of the tensor.</p>
+<p>However, caution is necessary. A specific coefficient of a tensor itself carries no geometric meaning. Its value depends on the chosen local coordinate chart or frame. Therefore, when encountering a single coefficient like <span class="math inline">\(T^i_j\)</span>​, it typically refers to the entire tensor, not just that specific coefficient.</p>
+</div>
+</div>
+<div id="defn-SetofTensors" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The set of all tensor fields of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(\cT^r_s\)</span> and the set of all tensor fields is denoted by <span class="math display">\[
+    \cT:=\bigoplus_{r, s\ge 0}\cT^r_s.
+\]</span> For a <span class="math inline">\((r,s)\)</span> tensor <span class="math inline">\(\bT\)</span> and a <span class="math inline">\((p, q)\)</span> tensor <span class="math inline">\(\bS\)</span>, for <span class="math inline">\(i=1, 2\)</span>, then we define <span class="math inline">\(\bT\otimes \bS\)</span> by <span class="math display">\[
+\begin{aligned}
+    (\bT\otimes\bS)&amp;(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
+    &amp;=\bT(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
+\end{aligned}
+\]</span> For <span class="math inline">\(\alpha_i\in T^*M, X\in TM\)</span>. One can define the <strong>contraction</strong> of the <span class="math inline">\(k\)</span>-th contravariant index and the <span class="math inline">\(l\)</span>-th covariant index: <span class="math display">\[
+    \Cont=\Cont^k_l: \cT^r_s\to \cT^{r-1}_{s-1},
+\]</span> by <span class="math display">\[
+\begin{aligned}
+    &amp;\Cont^k_l(\be_{j_1}\otimes\cdots \otimes \be_{j_r}\otimes \bomega^{i_1}\otimes\cdots \otimes \bomega^{i_s})\\
+    &amp;=\bomega^{i_l}(\be_{j_k})\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s}\\
+    &amp;=\delta_{j_k}^{i_l}\be_{j_1}\otimes\cdots \otimes \hat{\be}_{j_k}\otimes\cdots  \otimes\be_{j_r}\otimes \bomega^{i_1}\otimes\cdots\otimes \hat{\bomega}^{i_l} \otimes\cdots\otimes \bomega^{i_s},
+\end{aligned}
+\]</span> where the terms with hats are omitted. It can be checked that <span class="math inline">\(\Cont^k_l\)</span> is independent of the choice of basis.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove that for <span class="math inline">\(\bT\in\cT^r_s\)</span>. The coefficients of the contracted tensor <span class="math inline">\(\Cont^k_l(\bT)\in \cT^{r-1}_{s-1}\)</span> are given by:</p>
+<p><span class="math display">\[
+(\Cont^k_l(\bT))^{i_1, \cdots, i_{r-1}}_{j_1, \cdots, j_{s-1}}=T^{i_1, \cdots, i_{k-1}, \red{m}, i_{k}, \cdots, i_{r-1}}_{j_1, \cdots, j_{l-1}, \red{m}, j_l, \cdots,  j_{s-1}}
+\]</span></p>
+<p><em>(TikZ diagram omitted for web compatibility)</em></p>
+</div>
+</div>
+<div id="ex-Trace" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n\)</span>-dimensional real vector space. Let <span class="math inline">\(\bT\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, i.e.&nbsp;a <span class="math inline">\((1, 1)\)</span> tensor and can be written as <span class="math display">\[
+    \bT=T^{\beta}_{\alpha}\be_{\beta}\otimes \be^{\alpha}.
+\]</span> We can apply the contraction operator <span class="math inline">\(\Cont\)</span> to <span class="math inline">\(\bT\)</span>, since there is only one possible way of contracting the upper and lower indices. Clearly <span class="math inline">\(\Cont(\bT)\in \cT^0_0=\RR\)</span>, we have <span class="math display">\[
+    \Tr(\bT)=\Cont(\bT)=T^{\alpha}_{\alpha},
+\]</span> remember that we need to sum over the repeated index <span class="math inline">\(\alpha\)</span>. Therefore <span class="math inline">\(\Cont(\bT)\)</span> is a number. This is simply calculating the <strong>trace</strong> of the square matrix <span class="math inline">\((T^j_i)\)</span> in linear algebra.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Remark
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\bT\)</span> be a linear map from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, then <span class="math inline">\(\bT\)</span> is a <span class="math inline">\((1, 1)\)</span>-tensor. Its dual map <span class="math inline">\(\bT^*: V^*\to V^*\)</span> is also a <span class="math inline">\((1, 1)\)</span> tensor. What’s the difference between these two tensors? Let <span class="math inline">\(\{\be_1, \cdots, \be_n\}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\bomega^1, \cdots, \bomega^n\}\)</span> be the dual basis. We write <span class="math display">\[
+    \bT=T^{\alpha}_{\beta} \be_{\alpha}\otimes \bomega^{\beta}.
+\]</span> In linear algebra, if we fix a basis and its dual basis, the matrix representation of the dual map coincides with the transpose of the original map, i.e.&nbsp;<span class="math inline">\((T^*)^i_j=T^j_i\)</span>. We have <span class="math display">\[
+    \bT^*=T^{\beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta},
+\]</span> Note that we intensionally swap the order of <span class="math inline">\(\be_{\alpha}\otimes \bomega^{\beta}\)</span> to <span class="math inline">\(\bomega^{\alpha}\otimes \be_{\beta}\)</span>, reflecting the convention: <span class="math display">\[
+    \bT\in \Gamma(TM\otimes T^*M), \ \bT^*\in \Gamma(T^*M\otimes TM).
+\]</span> It can be very useful if we arrange the super- and sub-scripts in a linear order from left to right. For example, if <span class="math inline">\(T\in \Gamma(TM\otimes T^*M\otimes TM\otimes TM)\)</span>, then its component will be written as: <span class="math display">\[
+    T^{\lightgray{\circ} j\lightgray{\circ}\lightgray{\circ}}_{i\lightgray{\circ}kl}=T^{\ j}_{i\ k l}
+\]</span> Using this new convention, we have <span class="math display">\[
+    \bT=T^{\alpha}_{\ \beta} \be_{\alpha}\otimes \bomega^{\beta}\quad \text{and}\quad \bT^*=T^{\ \beta}_{\alpha} \bomega^{\alpha}\otimes \be_{\beta}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="exterior-algebra" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="exterior-algebra"><span class="header-section-number">2.3</span> Exterior Algebra</h2>
+<p>In this subsection, we study a special type of tensor: skew-symmetric tensors.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(V\)</span> be a real <span class="math inline">\(n\)</span>-dimensional vector space. A <span class="math inline">\((0, k)\)</span> tensor <span class="math inline">\(\alpha\)</span> is called <strong>symmetric</strong> if <span class="math display">\[
+    \alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})=\alpha(x_1, \cdots, x_k).
+\]</span> It is called <strong>skew symmetric</strong> if <span class="math display">\[
+    \alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})=\sgn(\sigma)\alpha(x_1, \cdots, x_k).
+\]</span> for any <span class="math inline">\(x_1, \cdots, x_k\in V\)</span> and <span class="math inline">\(\sigma\)</span> is a permutation of <span class="math inline">\(\{1, \cdots, k\}\)</span>. The set of all skew symmetric <span class="math inline">\((0, k)\)</span> tensors of <span class="math inline">\(V\)</span> is denoted by <span class="math inline">\(\Omega^k(V)\)</span>, its elements are called <span class="math inline">\(k\)</span>-exterior forms.</p>
+<p>If <span class="math inline">\(\alpha\in \Omega^k(V), \beta\in \Omega^l(V)\)</span>, we define their <strong>wedge product</strong> <span class="math inline">\(\alpha\wedge\beta \in \Omega^{k+l}(V)\)</span> by <span class="math display">\[
+    \alpha\wedge\beta (x_1, \cdots, x_{k+l})=\frac{1}{k! l !}\sum_{\sigma} \sgn(\sigma)\alpha(x_{\sigma(1)}, \cdots, x_{\sigma(k)})\beta(x_{\sigma(k+1)}, \cdots, x_{\sigma(k+l)})
+\]</span> Therefore for <span class="math inline">\(y_i^*\in V^*\)</span>, <span class="math inline">\(i=1, \cdots, k\)</span> and <span class="math inline">\(x_j \in V\)</span>, <span class="math inline">\(j=1, \cdots, k\)</span>. One can evaluate the <span class="math inline">\(k\)</span>-form <span class="math inline">\((y_1^*\wedge \cdots \wedge y^*_k)\)</span>: <span class="math display">\[
+    (y_1^*\wedge \cdots \wedge y^*_k)(x_1, \cdots, x_k):=\det (y^*_i(x_j)).
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One can check easily that if <span class="math inline">\(\dim V=n\)</span>, then</p>
+<ol type="1">
+<li><span class="math inline">\(\alpha\wedge \beta=(-1)^{\deg(\alpha)\deg(\beta)} \beta\wedge\alpha\)</span>;</li>
+<li><span class="math inline">\(\dim \Lambda^k(V)= {n \choose k}\)</span>;</li>
+<li>If <span class="math inline">\(V\)</span> has a basis <span class="math inline">\(\{\be_1, \cdots, \be_n\}\)</span>, then <span class="math inline">\(\Lambda^k(V)\)</span> has a basis of the form <span class="math display">\[
+\{\be^{i_1}\wedge \cdots \wedge \be^{i_k}\ |\ i_1&lt;\cdots&lt;i_k \}
+\]</span></li>
+</ol>
+</div>
+</div>
+<p>Now if we replace <span class="math inline">\(V\)</span> by <span class="math inline">\(T_pM\)</span> as before, we have:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define a <span class="math inline">\(k\)</span>-th <strong>differential from</strong> <span class="math inline">\(\omega\)</span> of a smooth manifold <span class="math inline">\(M^n\)</span> to be a smooth section of the exterior bundle <span class="math inline">\(\Lambda^k(T^*M)\)</span>, whose fiber at point <span class="math inline">\(p\in M\)</span> is given by <span class="math display">\[
+\begin{aligned}
+    \Lambda^k(T^*_pM)&amp;:=\{\alpha: T_pM\times \cdots\times T_pM\to \RR\ | \ \alpha\ \text{is skew symmetric}\\
+    &amp;\text{ and multi-linear}\}.
+\end{aligned}
+\]</span> <span class="math inline">\(k\)</span> is called the degree of <span class="math inline">\(\alpha\)</span>, denoted by <span class="math inline">\(\deg(\alpha)=k\)</span>. The set of differential <span class="math inline">\(k\)</span>-form on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(\Omega^k(M)\)</span>. For a differential form <span class="math inline">\(\omega\in \Omega^k(M)\)</span>, we define its exterior derivative <span class="math inline">\(d\omega \in \Omega^{k+1}(M)\)</span> by: <span class="math display">\[
+\begin{aligned}
+    d\omega(X_1, &amp;\cdots, X_{k+1})=\sum_{i=1}^{k+1} (-1)^{i+1}X_i (\omega(X_1, \cdots, \hat{X}_i, \cdots, X_{k+1}))\\
+    &amp;+\sum_{i&lt;j}(-1)^{i+j}\omega([X_i, X_j], X_1, \cdots, \hat{X}_i, \cdots, \hat{X}_j, \cdots, X_{k+1}).
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<p>One can check that <span class="math inline">\(d(\omega\wedge \eta)=d\omega\wedge \eta+(-1)^{\deg \omega} \omega\wedge d\eta\)</span>, and <span class="math inline">\(d^2\omega=0\)</span>.</p>
+</section>
+<section id="bases-components-of-tensors-and-change-of-bases" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="bases-components-of-tensors-and-change-of-bases"><span class="header-section-number">2.4</span> Bases, components of tensors and change of bases</h2>
+<p>In general, it requires more than one coordinate chart to cover a manifold <span class="math inline">\(M\)</span>. Hence, we study how these local descriptions of tensors change when switching between charts. The basic idea is to change the bases (coordinate systems) and observe how the corresponding tensor components transform. Let <span class="math inline">\(M^n\)</span> be a smooth manifold. Suppose <span class="math display">\[
+    (x^1, \cdots, x^n): U\to \RR^n,
+\]</span> and <span class="math display">\[
+    (x^{1'}, \cdots, x^{n'}): U'\to \RR^n,
+\]</span> are two open coordinate charts with <span class="math inline">\(U\cap U' \ne \varnothing\)</span>. Let <span class="math display">\[
+    \be_i:=\frac{\partial}{\partial x^i}, \quad \be_{i'}:=\frac{\partial}{\partial x^{i'}}
+\]</span> be two bases of <span class="math inline">\(\Gamma(TM)\)</span> restricted on <span class="math inline">\(U\cap U'\)</span>. Suppose the change of bases matrix <span class="math inline">\((L^i_{\ j}): U\cap U' \to \GL(n, \RR)\)</span> is given by: <span id="eq-BCTCB-CoB"><span class="math display">\[
+    \be_{j'}=\be_{\alpha} L^{\alpha}_{\ j'}.
+\tag{2.4}\]</span></span></p>
+<p>By the chain rule in calculus we have <span class="math display">\[
+    \frac{\partial}{\partial x^{j'}}=\frac{\partial x^{\alpha}}{\partial x^{j'}} \frac{\partial}{\partial x^{\alpha}}.
+\]</span> Therefore <span id="eq-ChangeCoordMatrix"><span class="math display">\[
+    L^i_{\ j'}=\frac{\partial x^i}{\partial x^{j'}}.
+\tag{2.5}\]</span></span></p>
+<p>Denote the inverse matrix of <span class="math inline">\(\{L^i_{\ j'}\}\)</span> by <span class="math inline">\(\{L^{i'}_{\ j}\}\)</span>, i.e. <span class="math display">\[
+    L^i_{\ \beta'}L^{\beta'}_{\ \ j}=\delta^i_{\ j} \quad L^{i'}_{\ \beta}L^{\beta}_{\ \ j'}=\delta^{i'}_{\ j'}
+\]</span> By <a href="#eq-ChangeCoordMatrix" class="quarto-xref">Equation&nbsp;<span>2.5</span></a>, we have <span id="eq-ChangeCoordMatrix1"><span class="math display">\[
+    L^{i'}_{\ j}=\frac{\partial x^{i'}}{\partial x^{j}}.
+\tag{2.6}\]</span></span></p>
+<section id="how-vector-fields-changes" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="how-vector-fields-changes"><span class="header-section-number">2.4.1</span> How vector fields changes?</h3>
+<p>Let <span class="math inline">\(X\)</span> be a vector field. On the overlap <span class="math inline">\(U\cap U'\)</span>, one can expand it in the first bases: <span class="math display">\[
+    X=\be_{\alpha}u^{\alpha}.
+\]</span> On the other hand we have: <span class="math display">\[
+    X=\be_{\beta'} u^{\beta'} =(\be_{\alpha} L^{\alpha}_{\ \beta'})u^{\beta'}.
+\]</span> It follows that <span id="eq-BCTCB-CoCoV"><span class="math display">\[
+    u^{\alpha}=L^{\alpha}_{\ \beta'}u^{\beta'}\Longleftrightarrow u^{\beta'}=L^{\beta'}_{\ \alpha}u^{\alpha}
+\tag{2.7}\]</span></span></p>
+<p>This is well known in linear algebra: the components of a vector must transformed, as in <a href="#eq-BCTCB-CoCoV" class="quarto-xref">Equation&nbsp;<span>2.7</span></a>, inversely as the bases transformed in <a href="#eq-BCTCB-CoB" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>.</p>
+</section>
+<section id="how-one-forms-changes" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="how-one-forms-changes"><span class="header-section-number">2.4.2</span> How one forms changes?</h3>
+<p>If <span class="math inline">\(\{\bomega^i\}\)</span> and <span class="math inline">\(\{\bomega^{j'}\}\)</span> denote the dual basis on <span class="math inline">\(U\)</span> and <span class="math inline">\(U'\)</span> respectively. Then under the change of bases <a href="#eq-BCTCB-CoB" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, we have <span class="math display">\[
+    \bomega^{i'}=L^{i'}_{\ \beta}\bomega^{\beta}.
+\]</span> The components of the one-form <span class="math inline">\(\bsigma=\sigma_{\alpha}\bomega^{\alpha}=\sigma_{\beta'}\bomega^{\beta'}\)</span> satisfy: <span id="eq-BCTCB-CoCoF"><span class="math display">\[
+    \sigma_{i'}=\sigma_{\beta}L^{\beta}_{\ i'}
+\tag{2.8}\]</span></span></p>
+</section>
+<section id="general-tensors" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="general-tensors"><span class="header-section-number">2.4.3</span> General tensors</h3>
+<p>For a tensor of type <span class="math inline">\((r, s)\)</span>, its behavior under change of coordinates is a combination of the previous two types. For example: <span class="math display">\[
+    T^{k'}_{\ i'j'}= T^a_{\ bc}L^{k'}_{\ a}L^b_{\ i'}L^c_{\ j'}.
+\]</span> Now you can derive the general formula for the changes of more complicated tensors. Sometimes the formula can be used to check whether an expression with many super- and sub-scripts is a tensor or not.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Lectures on Riemannian Geometry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Lectures on Riemannian Geometry</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
