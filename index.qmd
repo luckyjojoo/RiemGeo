@@ -14,18 +14,23 @@ page-layout: full
 
 <br>
 
-This website hosts the lecture notes for the course on Riemannian Geometry. The material covers fundamental concepts including connections, curvature, geodesics, and global analysis.
+This website hosts the lecture notes for the course on Riemannian Geometry. 
+
+**Current Chapter:**
+[**Chapter 1: Algebraic Part**](chap01.qmd) — *Definitions, Tensor Fields, and Exterior Algebra.*
 
 ::: {.callout-note appearance="minimal"}
 ## Course Status
-These notes are currently being updated for the current semester.
+Notes are currently being updated for the current semester.
 :::
 
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hyperbolic_triangle.svg/1200px-Hyperbolic_triangle.svg.png){width=80% fig-align="center" style="opacity: 0.8;"}
-<!-- You can replace the image URL above with a local image file, e.g., cover.png -->
+<!-- Placeholder for a geometric image -->
+<div style="width:100%; height:300px; background-color:#f0f0f0; display:flex; align-items:center; justify-content:center; color:#999; border-radius:8px;">
+  [Manifold Image / TikZ Placeholder]
+</div>
 :::
 
 :::
@@ -35,27 +40,18 @@ These notes are currently being updated for the current semester.
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
-### Part I
-**Foundations**  
+### Part I: Foundations
 Manifolds, Tensors, and Riemannian Metrics.
 :::
 
 ::: {.g-col-12 .g-col-md-4}
-### Part II
-**Curvature**  
+### Part II: Curvature
 Levi-Civita connections, Geodesics, and Curvature Tensors.
 :::
 
 ::: {.g-col-12 .g-col-md-4}
-### Part III
-**Global Geometry**  
+### Part III: Global Geometry
 Comparison Theorems, Submanifolds, and Variational formulas.
 :::
 
 :::
-
----
-
-<div style="text-align: center; color: gray; font-size: 0.9em;">
-&copy; 2025 GE Jian. Built with Quarto.
-</div>
