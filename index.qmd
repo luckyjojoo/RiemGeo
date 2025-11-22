@@ -1,0 +1,61 @@
+---
+title: ""
+page-layout: full
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+# Lectures on Riemannian Geometry
+
+**GE Jian**  
+*Beijing Normal University*  
+[jge@bnu.edu.cn](mailto:jge@bnu.edu.cn)
+
+<br>
+
+This website hosts the lecture notes for the course on Riemannian Geometry. The material covers fundamental concepts including connections, curvature, geodesics, and global analysis.
+
+::: {.callout-note appearance="minimal"}
+## Course Status
+These notes are currently being updated for the current semester.
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hyperbolic_triangle.svg/1200px-Hyperbolic_triangle.svg.png){width=80% fig-align="center" style="opacity: 0.8;"}
+<!-- You can replace the image URL above with a local image file, e.g., cover.png -->
+:::
+
+:::
+
+## Course Overview
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### Part I
+**Foundations**  
+Manifolds, Tensors, and Riemannian Metrics.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Part II
+**Curvature**  
+Levi-Civita connections, Geodesics, and Curvature Tensors.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Part III
+**Global Geometry**  
+Comparison Theorems, Submanifolds, and Variational formulas.
+:::
+
+:::
+
+---
+
+<div style="text-align: center; color: gray; font-size: 0.9em;">
+&copy; 2025 GE Jian. Built with Quarto.
+</div>
