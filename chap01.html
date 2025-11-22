@@ -355,8 +355,8 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be two real vector spaces of dimension <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, respectively. One can define their <strong>tensor product</strong> to be the vector space: <span class="math display">\[
     V\otimes W:=\Hom(V^*, W)=\{\phi\ |\ \phi: V^*\times W^*\to \mathbb{R}, \phi \ \text{is bi-linear}\},
-\]</span> where <span class="math inline">\(V^*\)</span> denotes the dual space of <span class="math inline">\(V\)</span>. For <span class="math inline">\(\bv\in V, \bw\in W\)</span> and <span class="math inline">\(\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*\)</span>, we define <span class="math display">\[
-    \bv\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\bv(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
+\]</span> where <span class="math inline">\(V^*\)</span> denotes the dual space of <span class="math inline">\(V\)</span>. For <span class="math inline">\(\mathbf{v}\in V, \bw\in W\)</span> and <span class="math inline">\(\mathbf{\alpha}\in V^*, \mathbf{\beta}\in W^*\)</span>, we define <span class="math display">\[
+    \mathbf{v}\otimes \bw(\mathbf{\alpha}, \mathbf{\beta})=\mathbf{v}(\mathbf{\alpha})\bw(\mathbf{\beta})\in \mathbb{R}.
 \]</span> elements in <span class="math inline">\(V\otimes W\)</span> are called <strong>tensors</strong>. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> (resp. <span class="math inline">\(\{\mathbf{f}_j\}_{1\le j\le m}\)</span>) be a basis of <span class="math inline">\(V\)</span> (resp. <span class="math inline">\(W\)</span>), then <span class="math inline">\(V\otimes W\)</span> has a basis <span class="math display">\[
     \{\mathbf{e}_i\otimes \mathbf{f}_j\}_{1\le i\le n, 1\le j\le m}.
 \]</span> Therefore <span class="math inline">\(\dim(V\otimes W)=nm\)</span>. Let <span class="math inline">\(V\)</span> be a vector space, one can define tensors of type <span class="math inline">\((r, s)\)</span> to be an element in the vector space: <span class="math display">\[
@@ -375,15 +375,15 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Let <span class="math inline">\(V\)</span> be a vector space, and <span class="math inline">\(v\in V\)</span> be a vector. Clearly <span class="math inline">\(\bv\)</span> can be viewed as a <span class="math inline">\((1, 0)\)</span>-tensor. In fact we can define <span class="math inline">\(\bv(\mathbf{\alpha}):=\mathbf{\alpha}(\bv)\)</span> for any <span class="math inline">\(\mathbf{\alpha}\in V^*\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(V\)</span> be a vector space, and <span class="math inline">\(v\in V\)</span> be a vector. Clearly <span class="math inline">\(\mathbf{v}\)</span> can be viewed as a <span class="math inline">\((1, 0)\)</span>-tensor. In fact we can define <span class="math inline">\(\mathbf{v}(\mathbf{\alpha}):=\mathbf{\alpha}(\mathbf{v})\)</span> for any <span class="math inline">\(\mathbf{\alpha}\in V^*\)</span>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{T}: V \to V\)</span> be a linear transformation, then <span class="math inline">\(\mathbf{T}\)</span> can be viewed as a <span class="math inline">\((1, 1)\)</span> tensor. In fact let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be a basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(\{\mathbf{\omega}^j\}_{1\le j\le n}\)</span> be the dual basis of <span class="math inline">\(V^*\)</span>. Let <span class="math inline">\((a_i^j)_{1\le i, j\le n}\)</span> be the coefficients defined by <span class="math display">\[
 \mathbf{T}(\mathbf{e}_i)=\mathbf{e}_{\alpha} a_i^{\alpha},
 \]</span> for <span class="math inline">\(i=1, \cdots, n\)</span>. Therefore <span class="math display">\[
 \mathbf{T}=a_i^\alpha \mathbf{e}_{\alpha}\otimes \mathbf{\omega}^i.
 \]</span></p></li>
 </ol>
-<p>To calculate <span class="math inline">\(\mathbf{T}(v)\)</span> for <span class="math inline">\(\bv=\mathbf{e}_{\alpha}v^{\alpha}\)</span>: <span class="math display">\[
-    \mathbf{T}(\bv)=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
+<p>To calculate <span class="math inline">\(\mathbf{T}(v)\)</span> for <span class="math inline">\(\mathbf{v}=\mathbf{e}_{\alpha}v^{\alpha}\)</span>: <span class="math display">\[
+    \mathbf{T}(\mathbf{v})=a_i^{\beta} \delta_{\alpha}^i \mathbf{e}_{\beta} \cdot v^{\alpha} = \mathbf{e}_{\beta}(a_{\alpha}^{\beta} v^{\alpha}) ,
 \]</span> the right hand side is matrices multiplication.</p>
 <ol start="3" type="1">
 <li>Let <span class="math inline">\(\Phi: V\times V \to \mathbb{R}\)</span> be a bilinear form, it can be viewed as a <span class="math inline">\((0, 2)\)</span>-tensor. Let <span class="math inline">\(\{\mathbf{e}_i\}_{1\le i\le n}\)</span> be as above. We can define <span class="math display">\[
@@ -444,10 +444,10 @@ a_{i j}=\Phi(\mathbf{e}_i, \mathbf{e}_j).
 <div class="callout-body-container callout-body">
 <p>The set of all tensor fields of type <span class="math inline">\((r, s)\)</span> on <span class="math inline">\(M\)</span> is denoted by <span class="math inline">\(\cT^r_s\)</span> and the set of all tensor fields is denoted by <span class="math display">\[
     \cT:=\bigoplus_{r, s\ge 0}\cT^r_s.
-\]</span> For a <span class="math inline">\((r,s)\)</span> tensor <span class="math inline">\(\mathbf{T}\)</span> and a <span class="math inline">\((p, q)\)</span> tensor <span class="math inline">\(\bS\)</span>, for <span class="math inline">\(i=1, 2\)</span>, then we define <span class="math inline">\(\mathbf{T}\otimes \bS\)</span> by <span class="math display">\[
+\]</span> For a <span class="math inline">\((r,s)\)</span> tensor <span class="math inline">\(\mathbf{T}\)</span> and a <span class="math inline">\((p, q)\)</span> tensor <span class="math inline">\(\mathbf{S}\)</span>, for <span class="math inline">\(i=1, 2\)</span>, then we define <span class="math inline">\(\mathbf{T}\otimes \mathbf{S}\)</span> by <span class="math display">\[
 \begin{aligned}
-    (\mathbf{T}\otimes\bS)&amp;(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
-    &amp;=\mathbf{T}(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\bS(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
+    (\mathbf{T}\otimes\mathbf{S})&amp;(\alpha_1, \cdots,\alpha_r,\cdots, \alpha_{r+p}, X_1, \cdots, X_s,\cdots, X_{s+q} )\\
+    &amp;=\mathbf{T}(\alpha_1, \cdots, \alpha_r, X_1, \cdots, X_s)\mathbf{S}(\alpha_{r+1},\cdots, \alpha_{r+p}, X_{s+1}, \cdots, X_{s+q}),
 \end{aligned}
 \]</span> For <span class="math inline">\(\alpha_i\in T^*M, X\in TM\)</span>. One can define the <strong>contraction</strong> of the <span class="math inline">\(k\)</span>-th contravariant index and the <span class="math inline">\(l\)</span>-th covariant index: <span class="math display">\[
     \Cont=\Cont^k_l: \cT^r_s\to \cT^{r-1}_{s-1},
