@@ -6,16 +6,18 @@ book:
   title: "Lectures on Riemannian Geometry"
   author: "GE Jian"
   date: last-modified
+
   sidebar:
     style: docked
     search: true
     collapse-level: 1
     background: "#f8f9fa"
-    chapters:
-      - index.qmd
-      - part: "Part I: Foundations"
-        chapters:
-          - chap01.qmd
+
+  chapters:
+    - index.qmd
+    - part: "Part I: Foundations"
+      chapters:
+        - chap01.qmd
 
 format:
   html:
